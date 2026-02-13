@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesut Alperen KIR</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 <body>
-    <div class="container">
+    <div class="desktop-view">
         <div class="navbar">
             <div class="isim">
-            <a href="#">Mesut Alperen KIR</a>
+                <a href="#">Mesut Alperen KIR</a>
             </div>
             <ul>
                 <li><a href="#" class="active">Ana Sayfa</a></li>
@@ -26,6 +18,32 @@
             </h4>
         </div>
     </div>
-    
+
+    <div class="mobile-view">
+        <div class="mobile-navbar">
+            <div class="mobile-isim">Portfolyo</div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <div id="mobileLinks" class="mobile-links">
+            <a href="#" class="active">Ana Sayfa</a>
+            <a href="#">Programlarım</a>
+            <a href="#">Oyunlarım</a>
+            <a href="#">3D Projelerim</a>
+        </div>
+
+        <div class="mobile-center">
+            <h1>Merhaba, <br>ben Mesut Alperen KIR</h1>
+            <p>Projelerimi inceleyebilir ve benim hakkımda bilgi sahibi olabilirsiniz.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const links = document.getElementById('mobileLinks');
+            links.classList.toggle('open');
+        }
+    </script>
 </body>
-</html> 
