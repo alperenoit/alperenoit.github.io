@@ -1,5 +1,13 @@
-<body>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesut Alperen KIR | Portfolyo</title>
     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
     <div class="desktop-view">
         <div class="navbar">
             <div class="isim">
@@ -24,7 +32,9 @@
         <div class="mobile-navbar">
             <div class="mobile-isim">Portfolyo</div>
             <div class="hamburger" onclick="toggleMenu()">
-                <span></span><span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
 
@@ -36,15 +46,17 @@
         </div>
 
         <div class="mobile-center">
-            <h1>Merhaba, <br>ben Mesut Alperen KIR</h1>
+            <h1>Merhaba, <br> ben Mesut Alperen KIR</h1>
             <p>Projelerimi inceleyebilir ve benim hakkımda bilgi sahibi olabilirsiniz.</p>
         </div>
     </div>
 
     <script>
         function toggleMenu() {
-            const links = document.getElementById('mobileLinks');
-            links.classList.toggle('open');
+            const menu = document.getElementById('mobileLinks');
+            menu.classList.toggle('open');
         }
     </script>
+
 </body>
+</html>
