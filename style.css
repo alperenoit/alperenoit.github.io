@@ -127,9 +127,9 @@ body {
 
     .mobile-links {
     display: none;
-    background: rgba(185, 85, 15, 0.4);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(10px); /* safari içinmiş */
+    background: rgba(185, 85, 15, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* safari içinmiş */
     
     position: absolute;
     width: 100%;
