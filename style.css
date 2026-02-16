@@ -119,7 +119,15 @@ body {
         z-index: 1001;
     }
 
+    .desktop-view .isim {
+    display: inline-block;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
     .mobile-isim {
+        display: inline-block;
+        text-decoration: none;
         color: var(--clr-text-main);
         font-size: 22px;
         font-weight: bold;
