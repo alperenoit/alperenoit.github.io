@@ -109,7 +109,7 @@ body {
     }
 
     .mobile-navbar {
-        background: #0F172A;
+        background: var(--clr-bg-sec);
         height: 70px;
         display: flex;
         justify-content: space-between;
@@ -136,7 +136,7 @@ body {
     display: block;
     width: 30px;
     height: 4px;
-    background: var(--clr-bg-pri);
+    background: var(--clr-text-sec);
     border-radius: 2px;
     transition: 0.3s; /*animasyon olursa lazım*/
     }
