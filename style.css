@@ -136,7 +136,11 @@ body {
     z-index: 1000;
     }
 
-.mobile-links a {
+    .mobile-links.open {
+    display: flex;
+    }
+
+    .mobile-links a {
     display: block;
     color: white;
     padding: 15px 20px;
