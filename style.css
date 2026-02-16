@@ -6,8 +6,21 @@
     box-sizing: border-box;
 }
 
+:root {
+  --clr-bg-pri: #0F172A;
+  --clr-bg-sec: #050d20;
+  
+  --clr-text-main: #FEDD00;
+  --clr-text-sec: #ffffff;
+  
+  --clr-button-act: #0F172A;
+  --clr-button-norm: #1d2741;
+}
+
+
+
 body {
-    background-color: beige;
+    background-color: var(--clr-bg-pri);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -19,7 +32,7 @@ body {
 .desktop-view .navbar {
     width: 100%;
     height: 80px;
-    background: rgb(185, 85, 15);
+    background: var(--clr-bg-sec);
 }
 
 .desktop-view .isim {
@@ -31,7 +44,7 @@ body {
 .desktop-view .isim a {
     text-decoration: none;
     font-size: 30px;
-    color: white;
+    color: var(--clr-text-main);
 }
 
 .desktop-view ul {
@@ -48,15 +61,18 @@ body {
 
 .desktop-view ul li a {
     text-decoration: none;
-    color: white;
+    color: var(--clr-text-main);
     font-size: 20px;
     padding: 10px 13px;
     transition: 0.3s;
 }
 
-.desktop-view ul li a.active,
+.desktop-view ul li a.active{
+    background: var(--clr-button-act);
+    border-radius: 12px;
+}
 .desktop-view ul li a:hover {
-    background: rgb(216, 121, 52);
+    background: var(--clr-button-norm);
     border-radius: 12px;
 }
 
@@ -72,14 +88,14 @@ body {
 .desktop-view .center h1 {
     font-size: 40px;
     font-weight: 800;
-    color: rgb(185, 85, 15);
+    color : var(--clr-text-main);
     margin-bottom: 10px;
 }
 
 .desktop-view .center h4 {
     font-size: 20px;
     font-weight: 600;
-    color: rgb(216, 121, 52);
+    color: var(--clr-text-main);
 }
 
 /* MOBIL */
@@ -93,7 +109,7 @@ body {
     }
 
     .mobile-navbar {
-        background: rgb(185, 85, 15);
+        background: #0F172A;
         height: 70px;
         display: flex;
         justify-content: space-between;
@@ -104,7 +120,7 @@ body {
     }
 
     .mobile-isim {
-        color: white;
+        color: var(--clr-text-main);
         font-size: 22px;
         font-weight: bold;
     }
@@ -120,17 +136,21 @@ body {
     display: block;
     width: 30px;
     height: 4px;
-    background: white;
+    background: var(--clr-bg-pri);
     border-radius: 2px;
     transition: 0.3s; /*animasyon olursa lazım*/
     }
 
     .mobile-links {
     display: none;
+<<<<<<< HEAD
     background: rgba(185, 85, 15, 0.6);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px); /* safari içinmiş */
     
+=======
+    background: var(--clr-bg-sec);
+>>>>>>> c2f7f50 (renk degisimi)
     position: absolute;
     width: 100%;
     left: 0;
@@ -145,7 +165,7 @@ body {
 
     .mobile-links a {
     display: block;
-    color: white;
+    color: var(--clr-text-main);
     padding: 15px 20px;
     text-decoration: none;
     text-align: center;
@@ -153,7 +173,7 @@ body {
     }
 
     .mobile-links a.active {
-        background: rgb(216, 121, 52);
+        background: var(--clr-button-act);
     }
 
     .mobile-center {
@@ -163,14 +183,14 @@ body {
 
     .mobile-center h1 {
         font-size: 30px;
-        color: rgb(185, 85, 15);
+        color: var(--clr-text-main);
         margin-bottom: 20px;
         line-height: 1.2;
     }
 
     .mobile-center p {
         font-size: 18px;
-        color: rgb(216, 121, 52);
+        color: var(--clr-text-main);
         line-height: 1.6;
         font-weight: 500;
     }
