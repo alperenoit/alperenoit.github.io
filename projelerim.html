@@ -34,20 +34,24 @@
             </div>
         </div>
 
+        <div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
         <div id="mobileLinks" class="mobile-links">
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="programlarim.html">Programlarım</a></li>
-                <li><a href="oyunlarim.html">Oyunlarım</a></li>
-                <li><a href="projelerim.html"  class="active">3D Projelerim</a></li>
-        </div>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="programlarim.html" class="active">Programlarım</a>
+        <a href="oyunlarim.html">Oyunlarım</a>
+        <a href="projelerim.html">3D Projelerim</a>
+    </div>
 
     <script>
         function toggleMenu() {
         const menu = document.getElementById('mobileLinks');
         const overlay = document.getElementById('menuOverlay');
     
+    if (menu && overlay) {
         menu.classList.toggle('open');
         overlay.classList.toggle('show');
+        }
     }
         
     </script>
