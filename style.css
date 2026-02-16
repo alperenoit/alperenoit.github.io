@@ -118,10 +118,10 @@ body {
 
     .hamburger span {
         display: block;
-        width: 28px;
-        height: 3px;
+        width: 50px;
+        height: 30px;
         background: white;
-        border-radius: 2px;
+        border-radius: 20px;
     }
 
     .mobile-links {
