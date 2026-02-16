@@ -29,30 +29,33 @@
     </div>
 
     <div class="mobile-view">
-        <div class="mobile-navbar">
-            <div class="mobile-isim">
-                <a href="index.html">Portfolyo</a>
-            </div>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    
+    <div class="mobile-navbar">
+        <div class="mobile-isim">
+            <a href="index.html">Portfolyo</a>
         </div>
-
-        <div id="mobileLinks" class="mobile-links">
-                <li><a href="index.html" class="active">Ana Sayfa</a></li>
-                <li><a href="programlarim.html">Programlarım</a></li>
-                <li><a href="oyunlarim.html">Oyunlarım</a></li>
-                <li><a href="projelerim.html">3D Projelerim</a></li>
-        </div>
-
-        <div class="mobile-center">
-            <h1>Merhaba, <br> ben Mesut Alperen KIR</h1>
-            <p>Bu web sitesinde; yapmakta olduğum veyahut yapmaya devam
-                ettiğim projeleri inceleyebilir, benim hakkımda bilgi sahibi olabilirsiniz.</p>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </div>
+
+    <div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+    <div id="mobileLinks" class="mobile-links">
+        <a href="index.html" class="active">Ana Sayfa</a>
+        <a href="programlarim.html">Programlarım</a>
+        <a href="oyunlarim.html">Oyunlarım</a>
+        <a href="projelerim.html">3D Projelerim</a>
+    </div>
+
+    <div class="mobile-center">
+        <h1>Merhaba, ben Mesut Alperen KIR</h1>
+        <p>Bu web sitesinde; yapmakta olduğum veyahut yapmaya devam
+            ettiğim projeleri inceleyebilir, benim hakkımda bilgi sahibi olabilirsiniz.</p>
+    </div>
+</div>
 
     <script>
         function toggleMenu() {

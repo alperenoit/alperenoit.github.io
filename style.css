@@ -108,6 +108,20 @@ body {
         display: block;
     }
 
+    .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    }
+
+    .menu-overlay.show {
+        display: block;
+    }
+
     .mobile-navbar {
         background: var(--clr-bg-sec);
         height: 70px;
@@ -151,7 +165,10 @@ body {
 
     .mobile-links {
     display: none;
-    background: var(--clr-bg-sec);
+    background: rgba(5, 13, 32, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /*Safari için lazımmış... */
+
     position: absolute;
     width: 100%;
     left: 0;
