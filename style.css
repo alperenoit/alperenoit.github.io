@@ -143,14 +143,7 @@ body {
 
     .mobile-links {
     display: none;
-<<<<<<< HEAD
-    background: rgba(185, 85, 15, 0.6);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px); /* safari içinmiş */
-    
-=======
     background: var(--clr-bg-sec);
->>>>>>> c2f7f50 (renk degisimi)
     position: absolute;
     width: 100%;
     left: 0;
