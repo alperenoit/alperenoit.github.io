@@ -47,6 +47,32 @@ body {
     color: var(--clr-text-main);
 }
 
+/* Tüm içerik kutularını başlangıçta gizle */
+.proje-icerik {
+    display: none;
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--clr-text-sec);
+    animation: fadeIn 0.5s ease; /* Hafif bir açılış efekti */
+}
+
+/* Sadece 'aktif' sınıfına sahip olanı göster */
+.proje-icerik.aktif {
+    display: block;
+}
+
+.proje-galeri img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .desktop-view ul {
     float: right;
     margin-right: 20px;
