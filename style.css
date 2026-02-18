@@ -47,16 +47,14 @@ body {
     color: var(--clr-text-main);
 }
 
-/* Tüm içerik kutularını başlangıçta gizle */
 .proje-icerik {
     display: none;
     padding: 40px 20px;
     text-align: center;
     color: var(--clr-text-sec);
-    animation: fadeIn 0.5s ease; /* Hafif bir açılış efekti */
+    animation: fadeIn 0.5s ease;
 }
 
-/* Sadece 'aktif' sınıfına sahip olanı göster */
 .proje-icerik.aktif {
     display: block;
 }
