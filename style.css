@@ -116,12 +116,14 @@ body {
     font-weight: 800;
     color : var(--clr-text-main);
     margin-bottom: 10px;
+    animation: fadeIn 0.5s ease;
 }
 
 .desktop-view .center h4 {
     font-size: 20px;
     font-weight: 600;
     color: var(--clr-text-main);
+    animation: fadeIn 0.5s ease;
 }
 
 .filter-button {
