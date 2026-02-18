@@ -18,11 +18,11 @@ function acProje(projeId) {
             secilenProje.classList.add('aktif');
         }
 
-        const butonlar = document.querySelectorAll('.filter-item');
-        butonlar.forEach(btn => btn.classList.remove('active'));
+        const butonlar = document.querySelectorAll('.filter-button');
+        butonlar.forEach(btn => btn.classList.remove('act'));
         
         if (event && event.currentTarget) {
-            event.currentTarget.classList.add('active');
+            event.currentTarget.classList.add('act');
         }
     }
 }

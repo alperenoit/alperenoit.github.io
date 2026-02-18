@@ -13,8 +13,8 @@
   --clr-text-main: #ceb40f;
   --clr-text-sec: #ffffff;
   
-  --clr-button-act: #0F172A;
-  --clr-button-norm: #1d2741;
+  --clr-button-act: #1d2741;
+  --clr-button-norm: #050d20;
 }
 
 
@@ -46,6 +46,8 @@ body {
     font-size: 30px;
     color: var(--clr-text-main);
 }
+
+
 
 .proje-icerik {
     display: none;
@@ -120,6 +122,21 @@ body {
     font-size: 20px;
     font-weight: 600;
     color: var(--clr-text-main);
+}
+
+.filter-button {
+    background: var(--clr-button-norm);
+    color: var(--clr-text-main);
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.filter-button:hover {
+    background: var(--clr-button-act);
+    transform: translateY(-2px); /* butonu hafif yukarı kaldırıyor */
 }
 
 /* MOBIL */

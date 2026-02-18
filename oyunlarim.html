@@ -44,7 +44,33 @@
         <a href="projelerim.html">3D Projelerim</a>
     </div>
 
-    <script src="script.js"></script>
+<div class="project-filter-container">
+    <div class="project-filter">
+        <button class="filter-button act" onclick="acProje('Oyunlarım')">Oyunlarım</button>
+        <button class="filter-button" onclick="acProje('Konya')">Konya'dan Kaçış</button>
+        <button class="filter-button" onclick="acProje('diger')">Yapım Aşamasında</button>
+    </div>
+</div>
+
+<div class="container">
+    <div id="Oyunlarım" class="proje-icerik aktif">
+        <h2>Oyunlarıma Hoş Geldiniz</h2>
+        <p>Detayları görmek için yukarıdan bir oyun seçin.</p>
+    </div>
+
+    <div id="Konya" class="proje-icerik">
+        <h2>Konya'dan Kaçış</h2>
+        <p>Bu projede Konya'dan kaçış temalı bir oyun geliştirdim...</p>
+    </div>
+
+    <div id="diger" class="proje-icerik">
+        <h2>Yapım Aşamasında</h2>
+        <p>Sizi biraz bekletiyorum...</p>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
