@@ -53,6 +53,16 @@ body {
     display: none;
     padding: 40px 20px;
     text-align: center;
+    h1 {
+        margin-top: 30px;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    p{
+        font-size: 18px;
+        line-height: 1.6;
+        font-weight: 500;
+    }
     color: var(--clr-text-sec);
     animation: fadeIn 0.5s ease;
 }
@@ -61,11 +71,27 @@ body {
     display: block;
 }
 
-.proje-galeri img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-    margin: 10px 0;
+.proje-foto {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 30px 0;
+    justify-content: center;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.proje-foto::-webkit-scrollbar { /* kaydırma çubuğunu gizlemek için */
+    display: none;
+}
+
+.proje-foto img {
+    flex: 0 0 auto;
+    width: 85%;             /* mobilde ekranı komple kaplamaması için */
+    max-width: 400px;       /* Masaüstünde çok devasa olmaz */
+    border-radius: 15px;
+    scroll-snap-align: center;
+    object-fit: cover;
 }
 
 @keyframes fadeIn {
@@ -127,6 +153,7 @@ body {
 }
 
 .filter-button {
+    overflow-x: auto;
     background: var(--clr-button-norm);
     color: var(--clr-text-main);
     border: none;
@@ -247,6 +274,7 @@ body {
         color: var(--clr-text-main);
         margin-bottom: 20px;
         line-height: 1.2;
+        animation: fadeIn 0.5s ease;
     }
 
     .mobile-center p {
@@ -254,5 +282,6 @@ body {
         color: var(--clr-text-main);
         line-height: 1.6;
         font-weight: 500;
+        animation: fadeIn 0.5s ease;
     }
 }
