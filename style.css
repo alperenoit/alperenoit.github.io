@@ -76,7 +76,7 @@ body {
     overflow-x: auto;
     gap: 15px;
     padding: 30px 0;
-    justify-content: center;
+    justify-content: flex-start;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
 }
