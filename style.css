@@ -59,10 +59,13 @@ body {
         margin-bottom: 10px;
     }
     p{
+        margin-top: 10px;
         font-size: 18px;
         line-height: 1.6;
         font-weight: 500;
     }
+    max-width: 800px;
+    margin: 0 auto;
     color: var(--clr-text-sec);
     animation: fadeIn 0.5s ease;
 }
