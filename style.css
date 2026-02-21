@@ -100,17 +100,31 @@ body {
     animation: fadeIn 0.5s ease;
 }
 
+.project-filter-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px 20px;
+    width: 100%;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.project-filter-container::-webkit-scrollbar {
+    display: none;
+}
+
 .filter-button {
     flex: 0 0 auto;
+    white-space: nowrap;
     background: var(--clr-button-norm);
     color: var(--clr-text-main);
     border: none;
     padding: 10px 20px;
-    margin: 5px;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
-    display: inline-block;
 }
 
 .filter-button:hover {
