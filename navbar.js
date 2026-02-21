@@ -43,5 +43,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const placeholder = document.getElementById("navbar-placeholder");
     if (placeholder) {
         placeholder.innerHTML = navbarHTML;
+
+        setActivePage();
     }
 });
+
+function setActivePage() {
+    const currentPage = window.location.pathname.split("/").pop();
+    
+    const allLinks = document.querySelectorAll('.desktop-view ul li a, .mobile-links a');
+
+    allLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage || (currentPage === "" && link.getAttribute('href') === "index.html")) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
