@@ -19,7 +19,6 @@
 }
 
 
-
 body {
     background-color: var(--clr-bg-pri);
     font-family: 'Montserrat', sans-serif;
@@ -48,6 +47,75 @@ body {
     text-decoration: none;
     font-size: 30px;
     color: var(--clr-text-main);
+}
+
+.desktop-view ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+.desktop-view ul li {
+    line-height: normal;
+}
+
+.desktop-view ul li a {
+    text-decoration: none;
+    color: var(--clr-text-main);
+    font-size: 20px;
+    padding: 10px 13px;
+    transition: 0.3s;
+}
+
+.desktop-view ul li a.active{
+    background: var(--clr-button-act);
+    border-radius: 12px;
+}
+.desktop-view ul li a:hover {
+    background: var(--clr-button-how);
+    border-radius: 12px;
+}
+
+.desktop-view .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+}
+
+.desktop-view .center h1 {
+    font-size: 40px;
+    font-weight: 800;
+    color : var(--clr-text-main);
+    margin-bottom: 10px;
+    animation: fadeIn 0.5s ease;
+}
+
+.desktop-view .center h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--clr-text-main);
+    animation: fadeIn 0.5s ease;
+}
+
+.filter-button {
+    flex: 0 0 auto;
+    background: var(--clr-button-norm);
+    color: var(--clr-text-main);
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.filter-button:hover {
+    background: var(--clr-button-act);
+    transform: translateY(-2px); /* butonu hafif yukarı kaldırıyor */
 }
 
 .social-links {
@@ -119,7 +187,7 @@ body {
 .proje-foto img {
     flex: 0 0 auto;
     width: 85%;             /* mobilde ekranı komple kaplamaması için */
-    max-width: 400px;       /* Masaüstünde çok devasa olmaz */
+    max-width: 400px;
     border-radius: 15px;
     scroll-snap-align: center;
     object-fit: cover;
@@ -130,72 +198,6 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.desktop-view ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-}
-
-.desktop-view ul li {
-    line-height: normal;
-}
-
-.desktop-view ul li a {
-    text-decoration: none;
-    color: var(--clr-text-main);
-    font-size: 20px;
-    padding: 10px 13px;
-    transition: 0.3s;
-}
-
-.desktop-view ul li a.active{
-    background: var(--clr-button-act);
-    border-radius: 12px;
-}
-.desktop-view ul li a:hover {
-    background: var(--clr-button-how);
-    border-radius: 12px;
-}
-
-.desktop-view .center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 80%;
-}
-
-.desktop-view .center h1 {
-    font-size: 40px;
-    font-weight: 800;
-    color : var(--clr-text-main);
-    margin-bottom: 10px;
-    animation: fadeIn 0.5s ease;
-}
-
-.desktop-view .center h4 {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--clr-text-main);
-    animation: fadeIn 0.5s ease;
-}
-
-.filter-button {
-    overflow-x: auto;
-    background: var(--clr-button-norm);
-    color: var(--clr-text-main);
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.filter-button:hover {
-    background: var(--clr-button-act);
-    transform: translateY(-2px); /* butonu hafif yukarı kaldırıyor */
-}
 
 /* MOBIL */
 @media (max-width: 1080px) {
