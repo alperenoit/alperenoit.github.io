@@ -10,74 +10,48 @@
 
 <body>
 
+    <div id="navbar-placeholder"></div>
+
     <div class="desktop-view">
-        <div class="navbar">
-            <div class="isim">
-                <a href="index.html">Portfolyo</a>
-            </div>
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="programlarim.html" class="active">Programlarım</a></li>
-                <li><a href="oyunlarim.html">Oyunlarım</a></li>
-                <li><a href="projelerim.html">3D Projelerim</a></li>
-            </ul>
-        </div>
+
     </div>
 
     <div class="mobile-view">
-        <div class="mobile-navbar">
-            <div class="mobile-isim">
-                <a href="index.html">Portfolyo</a>
+
+    </div>
+
+    <div class="project-filter-container">
+        <div class="project-filter">
+            <button class="filter-button act" onclick="acProje('Programlar')">Programlar</button>
+            <button class="filter-button" onclick="acProje('resim')">Resim Bulma</button>
+            <button class="filter-button" onclick="acProje('diger')">Diğer Program</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="Programlar" class="proje-icerik aktif">
+            <h2>Programlarıma Hoş Geldiniz</h2>
+            <p>Bu sayfada program özetlerimle ilgili bilgi sahibi olabilir, 
+                yukarıdan bir program seçerek de programın detaylarını görebilirsiniz.</p>
+            
+        </div>
+
+        <div id="resim" class="proje-icerik">
+            <h2>Resim Bulma Programı</h2>
+            <p>Bu programda bir resim bulmaca programı geliştirdim...</p>
+            <div class="proje-galeri">
+                <img src="havuc1.jpg" alt="Havuç Çizimi">
+                <img src="havuc2.jpg" alt="Havuç Model">
             </div>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
 
-        <div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
-
-        <div id="mobileLinks" class="mobile-links">
-        <a href="index.html">Ana Sayfa</a>
-        <a href="programlarim.html" class="active">Programlarım</a>
-        <a href="oyunlarim.html">Oyunlarım</a>
-        <a href="projelerim.html">3D Projelerim</a>
+        <div id="diger" class="proje-icerik">
+            <h2>Yapım Aşamasında</h2>
+            <p>Sizi biraz bekletiyorum...</p>
         </div>
     </div>
 
-<div class="project-filter-container">
-    <div class="project-filter">
-        <button class="filter-button act" onclick="acProje('Programlar')">Programlar</button>
-        <button class="filter-button" onclick="acProje('resim')">Resim Bulma</button>
-        <button class="filter-button" onclick="acProje('diger')">Diğer Program</button>
-    </div>
-</div>
-
-<div class="container">
-    <div id="Programlar" class="proje-icerik aktif">
-        <h2>Programlarıma Hoş Geldiniz</h2>
-        <p>Bu sayfada program özetlerimle ilgili bilgi sahibi olabilir, 
-            yukarıdan bir program seçerek de programın detaylarını görebilirsiniz.</p>
-        
-    </div>
-
-    <div id="resim" class="proje-icerik">
-        <h2>Resim Bulma Programı</h2>
-        <p>Bu programda bir resim bulmaca programı geliştirdim...</p>
-        <div class="proje-galeri">
-            <img src="havuc1.jpg" alt="Havuç Çizimi">
-            <img src="havuc2.jpg" alt="Havuç Model"> */
-        </div>
-    </div>
-
-    <div id="diger" class="proje-icerik">
-        <h2>Yapım Aşamasında</h2>
-        <p>Sizi biraz bekletiyorum...</p>
-    </div>
-</div>
-
-
+    <script src="navbar.js"></script>
     <script src="script.js"></script>
 
 </body>
