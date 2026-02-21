@@ -77,7 +77,6 @@ body {
 }
 
 .desktop-view .center {
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -104,15 +103,12 @@ body {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    gap: 10px;
-    padding: 10px 20px;
-    width: 100%;
+    gap: 15px;
+    padding: 20px;
+    width: 100%;             
+    justify-content: flex-start;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
-}
-
-.project-filter-container::-webkit-scrollbar {
-    display: none;
 }
 
 .filter-button {
@@ -121,10 +117,11 @@ body {
     background: var(--clr-button-norm);
     color: var(--clr-text-main);
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
+    font-weight: 600;
 }
 
 .filter-button:hover {
