@@ -182,6 +182,23 @@ body {
     display: block;
 }
 
+.proje-icerik .github-iglink a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: var(--clr-button-norm);
+    color: var(--clr-text-main);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.proje-icerik .github-iglink a:hover {
+    background: var(--clr-button-how);
+    transform: translateY(-3px);
+}
+
 .proje-foto {
     display: flex;
     overflow-x: auto;

@@ -22,8 +22,9 @@
 
 <div class="project-filter-container">
     <button class="filter-button act" onclick="acProje('Oyunlarım')">Oyunlarım</button>
+    <button class="filter-button" onclick="acProje('imageguesser')">Görsel Eşleştirme</button>
     <button class="filter-button" onclick="acProje('Konya')">Konya'dan Kaçış</button>
-    <button class="filter-button" onclick="acProje('diger')">Yapım Aşamasında</button>
+    <button class="filter-button" onclick="acProje('diger')">Düşünülüyor</button>
 </div>
 
 <div class="container">
@@ -31,17 +32,39 @@
         <h2>Oyunlarıma Hoş Geldiniz</h2>
         <p>Bu sayfada oyun özetlerimle ilgili bilgi sahibi olabilir, 
             yukarıdan bir oyun seçerek de oyunun detaylarını görebilirsiniz.</p>
+        <h1>Konya'dan Kaçış</h1>
+        <p>Üzerinde çalıştığım bu oyunda; Konya'da sorunlar yaşamış ve bunlardan
+            kaçmaya çalışırken sevdiğinden ayrı kalmış olan karakterlerimizi 
+            Konya'nın tarihi mekanlarından geçerek sevdiğine kavuşturmaya çalışıyoruz.</p>
         
+    </div>
+
+    <div id="imageguesser" class="proje-icerik">
+        <h2>Görsel Eşleştirme</h2>
+        <p>Bu oyunumda C# ile bir form uygulaması geliştirdim.
+            Oyunculara birkaç saniye boyunca eşleşmesi gereken görselleri gösterip,
+            sonrasında görselleri kapatarak oyuncuların bu görselleri bulmaya çalışmalarını amaçladım.
+            Oyuncuların görselleri buldukça puan kazanır ve oyunun sonunda kazandıkları puana göre
+            birbirleriyle kapışırlar.
+        </p>
+        <div class="github-iglink">
+            <a href="https://github.com/alperenoit/imageGuesser" target="_blank">GitHub Linki</a>
+        </div>
+
+        <div class="proje-foto">
+            <img src="img/imageguesser1.png" alt="Görsel Eşleştirme Oyunu açık ekran">
+            <img src="img/imageguesser0.png" alt="Görsel Eşleştirme Oyunu kapalı ekran">
+        </div>
     </div>
 
     <div id="Konya" class="proje-icerik">
         <h2>Konya'dan Kaçış</h2>
-        <p>Bu projede Konya'dan kaçış temalı bir oyun geliştirdim...</p>
+        <p>Bu proje şu anda geliştirme aşamasında...</p>
     </div>
 
     <div id="diger" class="proje-icerik">
-        <h2>Yapım Aşamasında</h2>
-        <p>Sizi biraz bekletiyorum...</p>
+        <h2>Fikirler Yükleniyor...</h2>
+        <p>Şimdilik düşünce aşamasında</p>
     </div>
 </div>
 
