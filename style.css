@@ -206,11 +206,28 @@ body {
     padding: 30px 0;
     justify-content: flex-start;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
+    scrollbar-width: auto;
 }
 
-.proje-foto::-webkit-scrollbar { /* kaydırma çubuğunu gizlemek için */
+.proje-foto::-webkit-scrollbar {
     display: none;
+}
+
+@media (pointer: fine) {
+    .proje-foto::-webkit-scrollbar {
+        display: block;
+        height: 8px;
+    }
+    
+    .proje-foto::-webkit-scrollbar-thumb {
+        background: var(--clr-text-main);
+        border-radius: 10px;
+    }
+    
+    .proje-foto::-webkit-scrollbar-track {
+        background: var(--clr-bg-sec);
+        border-radius: 10px;
+    }
 }
 
 .proje-foto img {
@@ -220,6 +237,7 @@ body {
     border-radius: 15px;
     scroll-snap-align: center;
     object-fit: cover;
+    -webkit-user-drag: none;
 }
 
 @keyframes fadeIn {
