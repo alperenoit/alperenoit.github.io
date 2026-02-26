@@ -44,6 +44,7 @@ body {
 }
 
 .desktop-view .isim a {
+    user-select: none;
     text-decoration: none;
     font-size: 30px;
     color: var(--clr-text-main);
@@ -207,6 +208,7 @@ body {
     justify-content: flex-start;
     scroll-snap-type: x mandatory;
     scrollbar-width: auto;
+    -webkit-user-drag: none;
 }
 
 .proje-foto::-webkit-scrollbar {
@@ -237,7 +239,6 @@ body {
     border-radius: 15px;
     scroll-snap-align: center;
     object-fit: cover;
-    -webkit-user-drag: none;
 }
 
 @keyframes fadeIn {
