@@ -9,9 +9,9 @@ const navbarHTML = `
             </div>
             <ul>
                 <li><a href="index.html" id="nav-index">Ana Sayfa</a></li>
-                <li><a href="programlarim.html" id="nav-programlar">Programlarım</a></li>
+                <li><a href="projelerim.html" id="nav-projeler">Projelerim</a></li>
                 <li><a href="oyunlarim.html" id="nav-oyunlar">Oyunlarım</a></li>
-                <li><a href="projelerim.html" id="nav-projeler">3D Projelerim</a></li>
+                <li><a href="programlarim.html" id="nav-programlar">Programlarım</a></li>                
             </ul>
         </div>
     </div>
@@ -26,9 +26,9 @@ const navbarHTML = `
         <div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
         <div id="mobileLinks" class="mobile-links">
             <a href="index.html" id="mob-index">Ana Sayfa</a>
-            <a href="programlarim.html" id="mob-programlar">Programlarım</a>
+            <a href="projelerim.html" id="mob-projeler">Projelerim</a>
             <a href="oyunlarim.html" id="mob-oyunlar">Oyunlarım</a>
-            <a href="projelerim.html" id="mob-projeler">3D Projelerim</a>
+            <a href="programlarim.html" id="mob-programlar">Programlarım</a>
             
             <div class="mobile-social-links">
                 <a href="https://github.com/alperenoit" target="_blank"><i class="fab fa-github"></i></a>
