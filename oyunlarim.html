@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,83 +18,109 @@
     </div>
 
     <div class="mobile-view">
-       
+
     </div>
 
-<div class="project-filter-container">
-    <button class="filter-button act" onclick="acProje('Oyunlarım')">Oyunlarım</button>
-    <button class="filter-button" onclick="acProje('funTheMental')">Fun The Mental</button>
-    <button class="filter-button" onclick="acProje('imageguesser')">Görsel Eşleştirme</button>
-    <button class="filter-button" onclick="acProje('Konya')">Konya'dan Kaçış</button>
-    <button class="filter-button" onclick="acProje('diger')">Düşünülüyor</button>
-</div>
-
-<div class="container">
-    <div id="Oyunlarım" class="proje-icerik aktif">
-        <h2>Oyunlarıma Hoş Geldiniz</h2>
-        <p>Bu sayfada oyun özetlerimle ilgili bilgi sahibi olabilir, 
-            yukarıdan bir oyun seçerek de oyunun detaylarını görebilirsiniz.</p>
-
-        <h1>Fun The Mental</h1>
-        <p>2024 Global Game Jam'de arkadaşlarımla geliştirdiğimiz stand-up temalı, Quick Time Event ve platform mekaniğine sahip bir oyun.</p>
-
-        <h1>Görsel Eşleştirme</h1>
-        <p>C# Form ile geliştirdiğim bu görsel eşleştirme oyununda, oyuncular kısıtlı sürede 
-            gördükleri görselleri hafızalarında tutarak doğru görsellerin eşlerini bulmaya çalışır. 
-            Puan ve zaman tabanlı sistem sayesinde oyuncular birbirleriyle rekabet edebilirler.</p>
-
-        <h1>Konya'dan Kaçış</h1>
-        <p>Unity ve C# kullanarak; yaşadığı zorluklardan kaçarken sevgilisinden ayrı düşen bir karakterin, Konya’daki tarihi ve sembol mekanlardan 
-            geçerken türlü zorlukları aştığı bir oyun geliştiriyorum.</p>
-        
+    <div class="project-filter-container">
+        <button class="filter-button act" onclick="acProje('Oyunlarım')">Oyunlarım</button>
+        <button class="filter-button" onclick="acProje('casusBul')">Casus Kim?</button>
+        <button class="filter-button" onclick="acProje('funTheMental')">Fun The Mental</button>
+        <button class="filter-button" onclick="acProje('imageguesser')">Görsel Eşleştirme</button>
+        <button class="filter-button" onclick="acProje('Konya')">Konya'dan Kaçış</button>
+        <button class="filter-button" onclick="acProje('diger')">Düşünülüyor</button>
     </div>
 
-    <div id="funTheMental" class="proje-icerik">
-        <h2>Fun The Mental</h2>
-        <p>2024 Global Game Jam'de arkadaşlarımla geliştirdiğimiz bu oyunda; o senenin "Make Me Laugh" temasına uygun olacak şekilde bir oyun yaptık.
-            Bir stand-up sanatçısı sahnede Quick Time Event mekaniği ile doğru espirileri zamanında yaparak seyirciyi güldürmeye çalışır.
-            Ara bölümlerde ise insan zihninin içinde bu espirileri tamamladığını düşündüren (aynı zamanda yetiştiremediğimiz) bir kesit bulunur.
-            Bu kesitler ile de stand-up için gittiği şehirleri sırayla tamamlar.
-        </p>
-        <div class="github-iglink">
-            <a href="https://globalgamejam.org/games/2024/fun-mental-7" target="_blank">Oyun Linki</a>
+    <div class="container">
+        <div id="Oyunlarım" class="proje-icerik aktif">
+            <h2>Oyunlarıma Hoş Geldiniz</h2>
+            <p>Bu sayfada oyun özetlerimle ilgili bilgi sahibi olabilir,
+                yukarıdan bir oyun seçerek de oyunun detaylarını görebilirsiniz.</p>
+
+            <h1>Casus Kim?</h1>
+            <p>Kuzenlerimle ve arkadaşlarımla birlikte oynayabilmek için Flutter ile geliştirdiğim ve Google Play
+                üzerinden yayınladığım bir Casus Bulma oyunu.</p>
+
+            <h1>Fun The Mental</h1>
+            <p>2024 Global Game Jam'de arkadaşlarımla geliştirdiğimiz stand-up temalı, Quick Time Event ve platform
+                mekaniğine sahip bir oyun.</p>
+
+            <h1>Görsel Eşleştirme</h1>
+            <p>C# Form ile geliştirdiğim bu görsel eşleştirme oyununda, oyuncular kısıtlı sürede
+                gördükleri görselleri hafızalarında tutarak doğru görsellerin eşlerini bulmaya çalışır.
+                Puan ve zaman tabanlı sistem sayesinde oyuncular birbirleriyle rekabet edebilirler.</p>
+
+            <h1>Konya'dan Kaçış</h1>
+            <p>Unity ve C# kullanarak; yaşadığı zorluklardan kaçarken sevgilisinden ayrı düşen bir karakterin,
+                Konya’daki tarihi ve sembol mekanlardan
+                geçerken türlü zorlukları aştığı bir oyun geliştiriyorum.</p>
+
         </div>
 
-        <div class="proje-foto">
-            <img src="img/ftmMain.png" alt="Fun The Mental Oyunu Ana Ekran">
-            <img src="img/ftmBrain.png" alt="Fun The Mental Beyin Kesiti">
-            <img src="img/ftmQuickTE.png" alt="Fun The Mental Quick Time Event Mekaniği">
+        <div id="casusBul" class="proje-icerik">
+            <h2>Casus Kim?</h2>
+            <p>Kuzenlerimle ve arkadaşlarımla birlikte oynayabilmek için Flutter ile geliştirdiğim ve Google Play
+                üzerinden yayınladığım bir Casus Bulma oyunu. Bu oyunda öncelikle oyuncular kaç kişi oynayacaklarını ve
+                kaç casus olacağını seçerler. Sonrasında sırayla herkese telefon elden ele dolaşır. Casus hariç herkese
+                aynı kelime, casusa da benzer bir kelime gösterilir ve oyuncular casusu bulmaya çalışırken casus da
+                sanki onlardanmış gibi konuşmaya çalışır.
+            </p>
+
+            <div class="proje-foto">
+
+            </div>
+        </div>
+
+        <div id="funTheMental" class="proje-icerik">
+            <h2>Fun The Mental</h2>
+            <p>2024 Global Game Jam'de arkadaşlarımla geliştirdiğimiz bu oyunda; o senenin "Make Me Laugh" temasına
+                uygun olacak şekilde bir oyun yaptık.
+                Bir stand-up sanatçısı sahnede Quick Time Event mekaniği ile doğru espirileri zamanında yaparak
+                seyirciyi güldürmeye çalışır.
+                Ara bölümlerde ise insan zihninin içinde bu espirileri tamamladığını düşündüren (aynı zamanda
+                yetiştiremediğimiz) bir kesit bulunur.
+                Bu kesitler ile de stand-up için gittiği şehirleri sırayla tamamlar.
+            </p>
+            <div class="github-iglink">
+                <a href="https://globalgamejam.org/games/2024/fun-mental-7" target="_blank">Oyun Linki</a>
+            </div>
+
+            <div class="proje-foto">
+                <img src="img/ftmMain.png" alt="Fun The Mental Oyunu Ana Ekran">
+                <img src="img/ftmBrain.png" alt="Fun The Mental Beyin Kesiti">
+                <img src="img/ftmQuickTE.png" alt="Fun The Mental Quick Time Event Mekaniği">
+            </div>
+        </div>
+
+        <div id="imageguesser" class="proje-icerik">
+            <h2>Görsel Eşleştirme</h2>
+            <p>C# ile geliştirdiğim bu form uygulamasında, oyuncuların görsel hafızalarını test etmelerini hedefledim.
+                Oyun başında görseller birkaç saniye gösterilip ardından kapatılır; oyuncular ise bu eşleşmeleri doğru
+                tahmin ederek puan toplarlar. Oyun sonunda elde edilen skorlar, oyuncular arasında rekabet dolu bir
+                sıralama oluşmasını sağlar.</p>
+            <div class="github-iglink">
+                <a href="https://github.com/alperenoit/imageGuesser" target="_blank">GitHub Linki</a>
+            </div>
+
+            <div class="proje-foto">
+                <img src="img/imageguesser1.png" alt="Görsel Eşleştirme Oyunu açık ekran">
+                <img src="img/imageguesser0.png" alt="Görsel Eşleştirme Oyunu kapalı ekran">
+            </div>
+        </div>
+
+        <div id="Konya" class="proje-icerik">
+            <h2>Konya'dan Kaçış</h2>
+            <p>Bu proje şu anda geliştirme aşamasında...</p>
+        </div>
+
+        <div id="diger" class="proje-icerik">
+            <h2>Fikirler Yükleniyor...</h2>
+            <p>Şimdilik düşünce aşamasında</p>
         </div>
     </div>
 
-    <div id="imageguesser" class="proje-icerik">
-        <h2>Görsel Eşleştirme</h2>
-        <p>C# ile geliştirdiğim bu form uygulamasında, oyuncuların görsel hafızalarını test etmelerini hedefledim. 
-            Oyun başında görseller birkaç saniye gösterilip ardından kapatılır; oyuncular ise bu eşleşmeleri doğru 
-            tahmin ederek puan toplarlar. Oyun sonunda elde edilen skorlar, oyuncular arasında rekabet dolu bir sıralama oluşmasını sağlar.</p>
-        <div class="github-iglink">
-            <a href="https://github.com/alperenoit/imageGuesser" target="_blank">GitHub Linki</a>
-        </div>
-
-        <div class="proje-foto">
-            <img src="img/imageguesser1.png" alt="Görsel Eşleştirme Oyunu açık ekran">
-            <img src="img/imageguesser0.png" alt="Görsel Eşleştirme Oyunu kapalı ekran">
-        </div>
-    </div>
-
-    <div id="Konya" class="proje-icerik">
-        <h2>Konya'dan Kaçış</h2>
-        <p>Bu proje şu anda geliştirme aşamasında...</p>
-    </div>
-
-    <div id="diger" class="proje-icerik">
-        <h2>Fikirler Yükleniyor...</h2>
-        <p>Şimdilik düşünce aşamasında</p>
-    </div>
-</div>
-
-<script src="navbar.js"></script>
-<script src="script.js"></script>
+    <script src="navbar.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
