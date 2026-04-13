@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,67 +11,82 @@
 
 <body>
 
-<div id="navbar-placeholder"></div>
+    <div id="navbar-placeholder"></div>
 
-<div class="desktop-view">
+    <div class="desktop-view">
 
-</div>
-
-<div class="mobile-view">
-
-</div>
-
-<div class="project-filter-container">
-    <button class="filter-button act" onclick="acProje('Projeler')">Projeler</button>
-    <button class="filter-button" onclick="acProje('zootopia')">Zootopia Havuç</button>
-    <button class="filter-button" onclick="acProje('roboKol')">Robotik Kol</button>
-    <button class="filter-button" onclick="acProje('soon')">Düşünülüyor</button>
-</div>
-
-<div class="container">
-    <div id="Projeler" class="proje-icerik aktif">
-        <h2>Projelerime Hoş Geldiniz</h2>
-        <p>Bu sayfada proje özetlerimle ilgili bilgi sahibi olabilir, 
-            yukarıdan bir proje seçerek de projenin detaylarını görebilirsiniz.</p>
-        
-        <h1>Zootopia Havuç Projesi</h1>
-        <p>Bu projede Zootopia filmindeki havuç şeklindeki ses kaydedici kalemi
-            kendi isteklerim doğrultusunda mp3 çalar tarzında olacak şekilde Arduino sistemlerini kullanarak oluşturdum.</p>
-
-        <h1>Endüstriyel 6 Eksenli Robotik Kol Projesi</h1>
-        <p>Tamamen kendi tasarımımız ile 6 eksenli ve endüstriyel robotik kol yapmayı hedeflediğimiz projemiz şu anda geliştirme aşamasında.</p>
     </div>
 
-    <div id="zootopia" class="proje-icerik">
-        <h1>Zootopia Havuç Projesi</h1>
-        <p>Bu projede Zootopia filmindeki havuç şeklindeki ses kaydedici kalemi modelledim.
-            3D model sitelerinden aradığım havuç modelini buldum ve Blender programı ile kendime uygun şekilde düzenledim.
-            Hazırladığım Arduino devresi ile modelin içine hoparlör, tf-card okuyucu, butonlar, batarya ve type-c şarj modülü yerleştirdim.
-            Bütün parçaları yalıtımlayıp yerleştirdikten sonra ise havuç modelinin geriye kalan parçalarını da 3D yazıcıda basarak boyadım ve projeyi tamamladım.
-        </p>
-        <div class="proje-foto">
-            <img src="img/zootopiahavuc.jpg" alt="Havuç Son Hali">
-            <img src="img/havucblender.jpg" alt="Havuç Blender Görünümü">
+    <div class="mobile-view">
+
+    </div>
+
+    <div class="project-filter-container">
+        <button class="filter-button act" onclick="acProje('Projeler')">Projeler</button>
+        <button class="filter-button" onclick="acProje('zootopia')">Zootopia Havuç</button>
+        <button class="filter-button" onclick="acProje('roboKol')">Robotik Kol</button>
+        <button class="filter-button" onclick="acProje('soon')">Düşünülüyor</button>
+    </div>
+
+    <div class="container">
+        <div id="Projeler" class="proje-icerik aktif">
+            <h2>Projelerime Hoş Geldiniz</h2>
+            <p>Bu sayfada proje özetlerimle ilgili bilgi sahibi olabilir,
+                yukarıdan bir proje seçerek de projenin detaylarını görebilirsiniz.</p>
+
+            <h1>Zootopia Havuç Projesi</h1>
+            <p>Bu projede Zootopia filmindeki havuç şeklindeki ses kaydedici kalemi
+                kendi isteklerim doğrultusunda mp3 çalar tarzında olacak şekilde Arduino sistemlerini kullanarak
+                oluşturdum.</p>
+
+            <h1>Endüstriyel 6 Eksenli Robotik Kol Projesi</h1>
+            <p>Tamamen kendi tasarımımız ile 6 eksenli ve endüstriyel robotik kol yapmayı hedeflediğimiz projemiz şu
+                anda geliştirme aşamasında.</p>
+        </div>
+
+        <div id="zootopia" class="proje-icerik">
+            <h1>Zootopia Havuç Projesi</h1>
+            <p>Bu projede Zootopia filmindeki havuç şeklindeki ses kaydedici kalemi modelledim.
+                3D model sitelerinden aradığım havuç modelini buldum ve Blender programı ile kendime uygun şekilde
+                düzenledim.
+                Hazırladığım Arduino devresi ile modelin içine hoparlör, tf-card okuyucu, butonlar, batarya ve type-c
+                şarj modülü yerleştirdim.
+                Bütün parçaları yalıtımlayıp yerleştirdikten sonra ise havuç modelinin geriye kalan parçalarını da 3D
+                yazıcıda basarak boyadım ve projeyi tamamladım.
+            </p>
+            <div class="proje-foto">
+                <img src="img/zootopiahavuc.jpg" alt="Havuç Son Hali">
+                <img src="img/havucblender.jpg" alt="Havuç Blender Görünümü">
+            </div>
+        </div>
+
+        <div id="roboKol" class="proje-icerik">
+            <h1>Endüstriyel 6 Eksenli Robotik Kol Projesi</h1>
+            <p>Şu anda bu projemi geliştirme aşamasındayım. Mühendislik Tasarımı dersi için 2 arkadaş olarak üzerinde
+                çalışmaya başladık.
+                Endüstriyel olarak kullanılabilecek şekilde tamamen bizim tarafımızdan tasarlanıp üretilecek. <br>
+                6 eksenli olacak şekilde geliştirerek hareket kabiliyetini maksimuma çıkarmayı düşünüyoruz.
+                İlerleyen aşamada ise yapay zeka entegrasyonu ve görüntü işlemeyi de projemize ekleyerek endüstriyel
+                alana uygun ve otomatik çalışabilecek bir hale getirmeyi amaçlıyoruz.
+            </p>
+            <div class="proje-foto">
+                <img src="img/roboarm_prototype.jpeg" alt="Endüstriyel Robotik Kol Prototipi">
+                <img src="img/roboarm_prototype2.jpeg" alt="Endüstriyel Robotik Kol Prototipi 2">
+                <img src="img/roboarm_case.jpeg" alt="Endüstriyel Robotik Kol Kasa Tasarımı">
+                <img src="img/roboarm_case2.jpeg" alt="Endüstriyel Robotik Kol Kasa Tasarımı">
+            </div>
+        </div>
+
+
+        <div id="soon" class="proje-icerik">
+            <h2>Fikirler Yükleniyor...</h2>
+            <p>Şimdilik düşünce aşamasında</p>
         </div>
     </div>
 
-    <div id="roboKol" class="proje-icerik">
-        <h1>Endüstriyel 6 Eksenli Robotik Kol Projesi</h1>
-        <p>Şu anda bu projemi geliştirme aşamasındayım. Mühendislik Tasarımı dersi için 2 arkadaş olarak üzerinde çalışmaya başladık.
-            Endüstriyel olarak kullanılabilecek şekilde tamamen bizim tarafımızdan tasarlanıp üretilecek. <br>
-            6 eksenli olacak şekilde geliştirerek hareket kabiliyetini maksimuma çıkarmayı düşünüyoruz.
-            İlerleyen aşamada ise yapay zeka entegrasyonu ve görüntü işlemeyi de projemize ekleyerek endüstriyel alana uygun ve otomatik çalışabilecek bir hale getirmeyi amaçlıyoruz.
-        </p>
-    </div>
-
-    <div id="soon" class="proje-icerik">
-        <h2>Fikirler Yükleniyor...</h2>
-        <p>Şimdilik düşünce aşamasında</p>
-    </div>
-</div>
-
-<script src="navbar.js"></script>
-<script src="script.js"></script>
+    <script src="navbar.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
