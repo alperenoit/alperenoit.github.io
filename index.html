@@ -3,64 +3,58 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="TL0pD4jSQmY1b94h8giK0Un7kbavwbDTSf-98NaJIaU" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesut Alperen KIR | Portfolyo</title>
     <meta name="description"
         content="Mesut Alperen KIR'ın portfolyosu. Yazılım projeleri, 3D tasarımlar ve geliştirdiğim oyunlar hakkında bilgiler.">
+    <!-- CSS ve İkon Kütüphaneleri -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-    <div id="navbar-placeholder"></div>
 
+    <!-- AÇILIŞ EKRANI (HERO) -->
     <section id="hero" class="hero-section">
-        <!-- Sol taraf - yazılar vs. -->
         <div class="hero-content">
             <h1>Merhaba,<br>ben <span>Mesut Alperen KIR</span></h1>
             <p>Yazılım geliştirme, 3D tasarım ve donanım projeleriyle ilgileniyorum. Hayata geçirdiğim tüm çalışmaları
                 aşağıdan inceleyebilirsiniz.</p>
-
             <div class="hero-buttons">
                 <a href="#portfolio" class="btn-primary">Projelerimi Gör</a>
                 <a href="#contact" class="btn-secondary">Bana Ulaşın</a>
             </div>
         </div>
-
-        <!-- Sağ taraf - fotoğraf vs. -->
         <div class="hero-image">
             <div class="square-card">
-                <!-- Fotoğraf -->
                 <img src="img/seninfotografin.jpg" alt="Mesut Alperen KIR">
             </div>
         </div>
-
     </section>
 
-    <!-- Portfolyo Section -->
+    <!-- PORTFOLYO BÖLÜMÜ -->
     <section id="portfolio" class="portfolio-section">
-
         <div class="section-title">
             <h2>Çalışmalarım</h2>
             <p>Geliştirdiğim projeler, oyunlar ve programlar</p>
         </div>
 
-        <!-- Filtre Butonları -->
+        <!-- Filtreleme Butonları -->
         <div class="filter-container">
-            <!-- Gemini: data-filter özelliği JS'de hangi kelimeyi arayacağımızı belirtir -->
             <button class="filter-btn active" onclick="filterProjects('all')">Tümü</button>
             <button class="filter-btn" onclick="filterProjects('proje')">Projelerim</button>
             <button class="filter-btn" onclick="filterProjects('oyun')">Oyunlarım</button>
             <button class="filter-btn" onclick="filterProjects('program')">Programlarım</button>
         </div>
 
-        <!-- Proje Kartları -->
+        <!-- Kart Izgarası -->
         <div class="projects-grid">
 
-            <!-- Kart 1: 3D Proje -->
+            <!-- Kart 1: Tek Görselli Proje -->
             <div class="project-card proje">
-                <img src="img/zootopiahavuc.jpg" alt="Zootopia Havuç">
+                <div class="card-image-slider">
+                    <img src="img/zootopiahavuc.jpg" alt="Zootopia Havuç">
+                </div>
                 <div class="card-content">
                     <h3>Zootopia Havuç</h3>
                     <p>Arduino sistemleri kullanarak geliştirdiğim, ses kaydedici ve MP3 çalar özellikli 3D baskı havuç
@@ -73,28 +67,32 @@
                 </div>
             </div>
 
-            <!-- Kart 2: Program -->
+            <!-- Kart 2: Çok Görselli Proje (JavaScript buraya okları otomatik ekleyecek) -->
             <div class="project-card program">
-                <img src="img/imageguesser1.png" alt="Görsel Eşleştirme">
+                <div class="card-image-slider">
+                    <img src="img/imageguesser1.png" alt="Görsel 1">
+                    <img src="img/imageguesser0.png" alt="Görsel 2">
+                </div>
                 <div class="card-content">
                     <h3>Görsel Eşleştirme</h3>
                     <p>Oyuncuların kısa süreliğine gösterilen görsellerin yerini hafızada tutup eşleştirmeye çalıştığı
-                        Windows form uygulaması.</p>
+                        form uygulaması.</p>
                     <div class="tags">
                         <span class="tag">C#</span>
                         <span class="tag">Windows Forms</span>
                     </div>
                     <div class="card-links">
                         <a href="https://github.com/alperenoit/imageGuesser" target="_blank"><i
-                                class="fab fa-github"></i>
-                            İncele</a>
+                                class="fab fa-github"></i> İncele</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Kart 3: Oyun -->
+            <!-- Kart 3: Tek Görselli Oyun Projesi -->
             <div class="project-card oyun">
-                <img src="img/konyadankacis.jpg" alt="Konya'dan Kaçış">
+                <div class="card-image-slider">
+                    <img src="img/konyadankacis.jpg" alt="Konya'dan Kaçış">
+                </div>
                 <div class="card-content">
                     <h3>Konya'dan Kaçış</h3>
                     <p>Tarihi mekanlardan geçerek engelleri aştığımız ve karakterleri kavuşturmaya çalıştığımız macera
@@ -108,9 +106,29 @@
         </div>
     </section>
 
-    <script src="navbar.js"></script>
-    <script src="script.js"></script>
+    <!-- İLETİŞİM BÖLÜMÜ -->
+    <section id="contact" class="contact-section">
+        <div class="contact-content">
+            <h2>Benimle İletişime Geçin</h2>
+            <p>Projelerim hakkında detaylı bilgi almak, işbirlikleri yapmak veya sadece merhaba demek için bana
+                ulaşabilirsiniz.</p>
+            <a href="mailto:mesutalperenkir52@gmail.com" class="btn-primary">E-posta Gönder</a>
+        </div>
+    </section>
 
+    <!-- ALT BİLGİ (FOOTER) -->
+    <footer class="footer">
+        <div class="footer-social">
+            <a href="https://github.com/alperenoit" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/artulatif/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/mesut-alperen-kir-01920a2a7/" target="_blank"><i
+                    class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2026 Mesut Alperen KIR. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <!-- JavaScript Dosyası -->
+    <script src="script.js"></script>
 </body>
 
 </html>
