@@ -1,8 +1,11 @@
+# IDE
+.vscode/
+
+# Backups and dependencies
+GoogleAiDw/node_modules/
 node_modules/
-build/
-dist/
-coverage/
+
+# OS files
+Thumbs.db
 .DS_Store
-*.log
-.env*
-!.env.example
+
