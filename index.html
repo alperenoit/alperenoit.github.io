@@ -1,246 +1,841 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesut Alperen KIR | Portfolyo</title>
+    <title>Mesut Alperen Kır — Yazılım & Donanım Geliştirici | Portfolyo</title>
     <meta name="description"
-        content="Mesut Alperen KIR'ın portfolyosu. Yazılım projeleri, 3D tasarımlar ve geliştirdiğim oyunlar hakkında bilgiler.">
-    <!-- CSS ve İkon Kütüphaneleri -->
-    <link rel="stylesheet" href="style.css">
+        content="Mesut Alperen Kır'ın kişisel portfolyosu. Flutter mobil uygulama, Unity oyun geliştirme, ESP32 gömülü sistemler ve 3D tasarım projeleri.">
+    <meta name="author" content="Mesut Alperen Kır">
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mesut Alperen Kır — Portfolyo">
+    <meta property="og:description"
+        content="Bilgisayar Mühendisliği son sınıf öğrencisi. Mobil, oyun, gömülü sistemler ve 3D prototipleme projeleri.">
+    <meta property="og:image" content="img/mesutalperen.webp">
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome İkon Kütüphanesi -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Ana Stil Dosyası -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- AÇILIŞ EKRANI (HERO) -->
-    <section id="hero" class="hero-section">
-        <div class="hero-content">
-            <h1>Merhaba,<br>ben <span>Mesut Alperen KIR</span></h1>
-            <p>Yazılım geliştirme, 3D tasarım ve donanım projeleriyle ilgileniyorum. Hayata geçirdiğim tüm çalışmaları
-                aşağıdan inceleyebilirsiniz.</p>
-            <div class="hero-buttons">
-                <a href="#portfolio" class="btn-primary">Projelerimi Gör</a>
-                <a href="#contact" class="btn-secondary">Bana Ulaşın</a>
+    <!-- YAPIŞKAN ÜST MENÜ (NAVBAR) -->
+    <header class="navbar-container" id="navbar">
+        <nav class="nav-wrapper">
+            <a href="#hero" class="nav-brand">
+                <span class="brand-badge">MAK</span>
+                <span class="brand-name">Mesut Alperen Kır</span>
+            </a>
+
+            <!-- Masaüstü Linkleri -->
+            <ul class="nav-links">
+                <li><a href="#projects" class="nav-link">Projelerim</a></li>
+                <li><a href="#skills" class="nav-link">Yetenekler</a></li>
+                <li><a href="#about" class="nav-link">Hakkımda</a></li>
+                <li><a href="#contact" class="nav-link">İletişim</a></li>
+            </ul>
+
+            <!-- Sağ Hızlı Butonlar -->
+            <div class="nav-actions">
+                <a href="https://github.com/alperenoit" target="_blank" rel="noopener" class="nav-icon-btn" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mesut-alperen-kir-01920a2a7/" target="_blank" rel="noopener"
+                    class="nav-icon-btn" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#contact" class="btn-nav-cta">Görüşelim</a>
+            </div>
+
+            <!-- Mobil Menü Butonu (Hamburger) -->
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menüyü Aç/Kapat">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+
+        <!-- Mobil Açılır Menü -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav-links">
+                <li><a href="#projects" class="mobile-nav-link">Projelerim</a></li>
+                <li><a href="#skills" class="mobile-nav-link">Yetenekler</a></li>
+                <li><a href="#about" class="mobile-nav-link">Hakkımda</a></li>
+                <li><a href="#contact" class="mobile-nav-link">İletişim</a></li>
+            </ul>
+            <div class="mobile-socials">
+                <a href="https://github.com/alperenoit" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/mesut-alperen-kir-01920a2a7/" target="_blank" rel="noopener"><i
+                        class="fab fa-linkedin"></i> LinkedIn</a>
             </div>
         </div>
-        <div class="hero-image">
-            <div class="square-card">
-                <img src="img/mesutalperen.webp" alt="Mesut Alperen KIR">
+    </header>
+
+    <main>
+        <!-- GİRİŞ BÖLÜMÜ (HERO) -->
+        <section id="hero" class="hero-section">
+            <div class="hero-glow"></div>
+            <div class="container hero-grid">
+
+                <div class="hero-text-content">
+                    <!-- İşe Alım Rozeti -->
+                    <div class="status-pill">
+                        <span class="status-dot"></span>
+                        <span>İş Fırsatlarına & Staj Tekliflerine Açık</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Yazılım, Oyun & Gömülü Sistemler Geliştirici
+                    </h1>
+
+                    <p class="hero-description">
+                        Merhaba, ben <strong class="text-white">Mesut Alperen Kır</strong>. Bilgisayar Mühendisliği son
+                        sınıf öğrencisiyim. Mobil uygulama, oyun geliştirme ve IoT/robotik donanım projelerini
+                        fikir aşamasından çalışan bir ürüne dönüştürmeye odaklanıyorum.
+                    </p>
+
+                    <!-- Aksiyon Butonları -->
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-primary">
+                            <span>Projelerimi İncele</span>
+                            <i class="fas fa-arrow-down"></i>
+                        </a>
+                        <a href="#contact" class="btn-secondary">
+                            <span>İletişime Geç</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                        <a href="https://github.com/alperenoit" target="_blank" rel="noopener" class="btn-ghost">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+
+                    <!-- İşe Alım Yöneticileri İçin Hızlı Metrikler -->
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">10.000+</div>
+                            <div class="stat-label">Google Play İndirme</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">6 Eksenli</div>
+                            <div class="stat-label">Robot Kol & ESP32</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">Unity & C#</div>
+                            <div class="stat-label">Game Jam Geliştirici</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">End-to-End</div>
+                            <div class="stat-label">3D Tasarım & Donanım</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profil Fotoğrafı Kartı -->
+                <div class="hero-photo-wrapper">
+                    <div class="photo-frame">
+                        <img src="img/mesutalperen.webp" alt="Mesut Alperen Kır" class="profile-img">
+                        <div class="photo-info-badge">
+                            <i class="fas fa-code"></i>
+                            <div>
+                                <div class="badge-title">Bilgisayar Mühendisliği</div>
+                                <div class="badge-sub">Lisans Son Sınıf</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- PORTFOLYO BÖLÜMÜ -->
-    <section id="portfolio" class="portfolio-section">
-        <div class="section-title">
-            <h2>Çalışmalarım</h2>
-            <p>Geliştirdiğim projeler, oyunlar ve programlar</p>
-        </div>
-
-        <!-- Filtreleme Butonları -->
-        <div class="filter-container">
-            <button class="filter-btn active" onclick="filterProjects('all')">Tümü</button>
-            <button class="filter-btn" onclick="filterProjects('proje')">Projelerim</button>
-            <button class="filter-btn" onclick="filterProjects('oyun')">Oyunlarım</button>
-            <button class="filter-btn" onclick="filterProjects('program')">Programlarım</button>
-        </div>
-
-        <!-- Kart Izgarası -->
-        <div class="projects-grid">
-
-            <!-- Casus Kim -->
-            <div class="project-card oyun">
-                <div class="card-image-slider">
-                    <img src="img/casus0.webp" alt="Görsel 1">
-                    <img src="img/casus1.webp" alt="Görsel 2">
-                    <img src="img/casus2.webp" alt="Görsel 3">
+        <!-- PROJELER BÖLÜMÜ -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Portfolyo</span>
+                    <h2 class="section-title">Öne Çıkan Çalışmalarım</h2>
+                    <p class="section-subtitle">
+                        Mobil oyun, gömülü sistem, masaüstü yazılım ve 3D prototipleme alanlarında geliştirdiğim projeler.
+                    </p>
                 </div>
-                <div class="card-content">
-                    <h3>Casus Kim (10.000 İndirme)</h3>
-                    <p>Google Play'de Haziran 2026 itibariyle 10.000 indirmeye ulaşan, Flutter ile geliştirdiğim bir
-                        Casus
-                        Bulma oyunu. Bu oyunda öncelikle oyuncular kaç kişi
-                        oynayacaklarını ve
-                        kaç casus olacağını seçerler. Sonrasında sırayla herkese telefon elden ele dolaşır. Casus hariç
-                        herkese
-                        aynı kelime, casusa da benzer bir kelime gösterilir ve oyuncular casusu bulmaya çalışırken casus
-                        da
-                        sanki onlardanmış gibi konuşmaya çalışır.</p>
-                    <div class="tags">
-                        <span class="tag">Flutter</span>
-                        <span class="tag">Mobil Uygulama</span>
-                        <span class="tag">Oyun Geliştirme</span>
-                        <span class="tag">Google Play</span>
-                        <span class="tag">Parti Oyunu</span>
+
+                <!-- Kategori Filtre Butonları -->
+                <div class="filter-bar">
+                    <button class="filter-tab active" data-category="all">
+                        <i class="fas fa-layer-group"></i> Tümü
+                    </button>
+                    <button class="filter-tab" data-category="mobil">
+                        <i class="fas fa-mobile-screen"></i> Mobil & Oyun
+                    </button>
+                    <button class="filter-tab" data-category="donanim">
+                        <i class="fas fa-microchip"></i> Robotik & Donanım
+                    </button>
+                    <button class="filter-tab" data-category="masaustu">
+                        <i class="fas fa-desktop"></i> Masaüstü & Tasarım
+                    </button>
+                </div>
+
+                <!-- Proje Kartları Izgarası -->
+                <div class="projects-grid">
+
+                    <!-- PROJE 1: CASUS KİM -->
+                    <article class="project-card" data-category="mobil">
+                        <div class="card-media">
+                            <div class="image-carousel" data-carousel>
+                                <div class="carousel-track">
+                                    <img src="img/casus0.webp" alt="Casus Kim Ekran 1" loading="lazy">
+                                    <img src="img/casus1.webp" alt="Casus Kim Ekran 2" loading="lazy">
+                                    <img src="img/casus2.webp" alt="Casus Kim Ekran 3" loading="lazy">
+                                </div>
+                                <div class="carousel-overlay">
+                                    <span class="carousel-counter">1 / 3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <span class="badge badge-accent"><i class="fab fa-google-play"></i> 10.000+ İndirme</span>
+                                <span class="badge badge-subtle">Mobil Parti Oyunu</span>
+                            </div>
+                            <h3 class="card-title">Casus Kim?</h3>
+                            <p class="card-desc">
+                                Google Play'de yayınlanan, Flutter ile geliştirdiğim sosyal casus bulma parti oyunu.
+                                Telefonun elden ele dolaşması mekaniğiyle oyunculara gizli kelimeler atanır; oyuncular casusu
+                                deşifre etmeye çalışırken casus kimliğini gizlemeye çalışır.
+                            </p>
+                            <div class="tag-list">
+                                <span class="tag">Flutter</span>
+                                <span class="tag">Dart</span>
+                                <span class="tag">Google Play</span>
+                                <span class="tag">Mobil Oyun</span>
+                                <span class="tag">UX / UI</span>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://play.google.com/store/apps/details?id=com.artulatif.casuskim" target="_blank"
+                                    rel="noopener" class="btn-card-link">
+                                    <i class="fab fa-google-play"></i>
+                                    <span>Google Play'de Gör</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJE 2: ROBOTİK KOL -->
+                    <article class="project-card" data-category="donanim">
+                        <div class="card-media">
+                            <div class="image-carousel" data-carousel>
+                                <div class="carousel-track">
+                                    <img src="img/robokol_full0.webp" alt="Robot Kol Genel" loading="lazy">
+                                    <img src="img/robokol_base1.webp" alt="Robot Kol Taban Açı 1" loading="lazy">
+                                    <img src="img/robokol_mid0.webp" alt="Robot Kol Gövde" loading="lazy">
+                                    <img src="img/robokol_base0.webp" alt="Robot Kol Taban Açı 2" loading="lazy">
+                                </div>
+                                <div class="carousel-overlay">
+                                    <span class="carousel-counter">1 / 4</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <span class="badge badge-warning"><i class="fas fa-gear"></i> Robotik & Mekatronik</span>
+                                <span class="badge badge-subtle">Gömülü Sistem</span>
+                            </div>
+                            <h3 class="card-title">Endüstriyel 6 Eksenli Robot Kol</h3>
+                            <p class="card-desc">
+                                ESP32 mikrokontrolcü ve servo motorlar kullanılarak hayata geçirilen, kinematik hesaplamalarla
+                                kontrol edilen endüstriyel tip robot kol projesi. Şasi parçaları 3D baskı için optimize edilmiş
+                                ve montajı gerçekleştirilmiştir.
+                            </p>
+                            <div class="tag-list">
+                                <span class="tag">C++</span>
+                                <span class="tag">ESP32</span>
+                                <span class="tag">Gömülü Sistemler</span>
+                                <span class="tag">Kinematik</span>
+                                <span class="tag">3D Modelleme</span>
+                            </div>
+                            <div class="card-footer">
+                                <span class="footer-note"><i class="fas fa-check-circle"></i> Donanım Prototipi Tamamlandı</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJE 3: FUN THE MENTAL -->
+                    <article class="project-card" data-category="mobil">
+                        <div class="card-media">
+                            <div class="image-carousel" data-carousel>
+                                <div class="carousel-track">
+                                    <img src="img/ftm1.webp" alt="Fun The Mental Sahne 1" loading="lazy">
+                                    <img src="img/ftm0.webp" alt="Fun The Mental Sahne 2" loading="lazy">
+                                    <img src="img/ftm2.webp" alt="Fun The Mental Sahne 3" loading="lazy">
+                                </div>
+                                <div class="carousel-overlay">
+                                    <span class="carousel-counter">1 / 3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <span class="badge badge-info"><i class="fas fa-gamepad"></i> Global Game Jam 2024</span>
+                                <span class="badge badge-subtle">Ekip Projesi</span>
+                            </div>
+                            <h3 class="card-title">Fun The Mental</h3>
+                            <p class="card-desc">
+                                Global Game Jam 2024 "Make Me Laugh" teması için 48 saatte ekip olarak geliştirdiğimiz oyun.
+                                Bir stand-up komedyeninin seyirciyi güldürmek için doğru esprileri Quick Time Event (QTE) ve
+                                ritim mekanikleriyle yapmasını konu alır.
+                            </p>
+                            <div class="tag-list">
+                                <span class="tag">Unity</span>
+                                <span class="tag">C#</span>
+                                <span class="tag">Game Jam</span>
+                                <span class="tag">QTE Mekaniği</span>
+                                <span class="tag">Oyun Tasarımı</span>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://globalgamejam.org/games/2024/fun-mental-7" target="_blank" rel="noopener"
+                                    class="btn-card-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>GGJ Sayfası</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJE 4: ZOOTOPIA HAVUÇ -->
+                    <article class="project-card" data-category="donanim">
+                        <div class="card-media">
+                            <div class="image-carousel" data-carousel>
+                                <div class="carousel-track">
+                                    <img src="img/havuc1.webp" alt="Zootopia Havuç 1" loading="lazy">
+                                    <img src="img/havuc0.webp" alt="Zootopia Havuç 2" loading="lazy">
+                                </div>
+                                <div class="carousel-overlay">
+                                    <span class="carousel-counter">1 / 2</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <span class="badge badge-accent"><i class="fas fa-cube"></i> 3D Tasarım & IoT</span>
+                                <span class="badge badge-subtle">Donanım Prototipi</span>
+                            </div>
+                            <h3 class="card-title">Zootopia Havuç — Ses Kaydedici & MP3</h3>
+                            <p class="card-desc">
+                                Zootopia filmindeki havuç kalemin Blender ile modellenip Arduino, hoparlör, TF kart okuyucu,
+                                butonlar ve Type-C şarj devresiyle donatılarak ses kaydedici ve MP3 çalar haline getirildiği
+                                fiziksel ürün projesi.
+                            </p>
+                            <div class="tag-list">
+                                <span class="tag">Arduino</span>
+                                <span class="tag">C++</span>
+                                <span class="tag">Blender 3D</span>
+                                <span class="tag">3D Baskı</span>
+                                <span class="tag">Devre Tasarımı</span>
+                            </div>
+                            <div class="card-footer">
+                                <span class="footer-note"><i class="fas fa-check-circle"></i> Fiziksel Donanım Üretildi</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJE 5: GÖRSEL EŞLEŞTİRME -->
+                    <article class="project-card" data-category="masaustu">
+                        <div class="card-media">
+                            <div class="image-carousel" data-carousel>
+                                <div class="carousel-track">
+                                    <img src="img/imageGuess0.webp" alt="Görsel Eşleştirme Oyun Ekranı 1" loading="lazy">
+                                    <img src="img/imageGuess1.webp" alt="Görsel Eşleştirme Oyun Ekranı 2" loading="lazy">
+                                </div>
+                                <div class="carousel-overlay">
+                                    <span class="carousel-counter">1 / 2</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <span class="badge badge-info"><i class="fab fa-windows"></i> Masaüstü Yazılım</span>
+                                <span class="badge badge-subtle">Hafıza Oyunu</span>
+                            </div>
+                            <h3 class="card-title">Görsel Eşleştirme Uygulaması</h3>
+                            <p class="card-desc">
+                                C# ve Windows Forms mimarisi ile geliştirilmiş hafıza ve reaksiyon oyunu.
+                                Kısa süreliğine gösterilen kartların yerini hafızada tutarak doğru eşleşmeleri bulmayı
+                                hedefleyen, süre ve puanlama tabanlı masaüstü uygulaması.
+                            </p>
+                            <div class="tag-list">
+                                <span class="tag">C#</span>
+                                <span class="tag">.NET</span>
+                                <span class="tag">Windows Forms</span>
+                                <span class="tag">Algoritma</span>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://github.com/alperenoit/imageGuesser" target="_blank" rel="noopener"
+                                    class="btn-card-link">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub'da İncele</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJE 6: MASA LAMBASI -->
+                    <article class="project-card" data-category="donanim">
+                        <div class="card-media">
+                            <div class="image-carousel" data-carousel>
+                                <div class="carousel-track">
+                                    <img src="img/masaLamba2.webp" alt="Masa Lambası 1" loading="lazy">
+                                    <img src="img/masaLamba1.webp" alt="Masa Lambası 2" loading="lazy">
+                                    <img src="img/masaLamba0.webp" alt="Masa Lambası 3" loading="lazy">
+                                </div>
+                                <div class="carousel-overlay">
+                                    <span class="carousel-counter">1 / 3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <span class="badge badge-accent"><i class="fas fa-lightbulb"></i> Endüstriyel Tasarım</span>
+                                <span class="badge badge-subtle">LED Donanım</span>
+                            </div>
+                            <h3 class="card-title">Modüler Masa Lambası</h3>
+                            <p class="card-desc">
+                                Modern çalışma masaları için özel olarak 3D modellenen, dahili kablolama kanallarına ve LED
+                                aydınlatma modülüne sahip fonksiyonel masa lambası tasarımı ve üretimi.
+                            </p>
+                            <div class="tag-list">
+                                <span class="tag">3D CAD</span>
+                                <span class="tag">FDM Baskı</span>
+                                <span class="tag">LED Devre</span>
+                                <span class="tag">Ürün Tasarımı</span>
+                            </div>
+                            <div class="card-footer">
+                                <span class="footer-note"><i class="fas fa-check-circle"></i> Tasarlandı & Üretildi</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJE 7: 3D KALEMLİK -->
+                    <article class="project-card" data-category="masaustu">
+                        <div class="card-media">
+                            <div class="image-carousel" data-carousel>
+                                <div class="carousel-track">
+                                    <img src="img/kalemlik0.webp" alt="3D Kalemlik Görünüm 1" loading="lazy">
+                                    <img src="img/kalemlik1.webp" alt="3D Kalemlik Görünüm 2" loading="lazy">
+                                </div>
+                                <div class="carousel-overlay">
+                                    <span class="carousel-counter">1 / 2</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <span class="badge badge-subtle"><i class="fas fa-pencil"></i> Masaüstü Organizatör</span>
+                                <span class="badge badge-info">Printables Açık Kaynak</span>
+                            </div>
+                            <h3 class="card-title">Masaüstü Organizatör Kalemlik</h3>
+                            <p class="card-desc">
+                                Ergonomik bölmelere sahip, 3D yazıcı üretim toleransları düşünülerek modellenmiş ve
+                                Printables platformunda açık kaynak olarak paylaşılan masaüstü düzenleyici.
+                            </p>
+                            <div class="tag-list">
+                                <span class="tag">3D Modelleme</span>
+                                <span class="tag">Dilimleme (Slicing)</span>
+                                <span class="tag">Printables</span>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://www.printables.com/model/1759385-pen-holder-desk-organizer" target="_blank"
+                                    rel="noopener" class="btn-card-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Printables Modeli</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- YETENEKLER BÖLÜMÜ -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Teknik Yetkinlikler</span>
+                    <h2 class="section-title">Teknoloji & Araç Havuzum</h2>
+                    <p class="section-subtitle">
+                        Yazılım geliştirme, gömülü sistemler ve tasarım süreçlerinde aktif kullandığım teknolojiler.
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+
+                    <!-- Yetenek Grubu 1: Programlama Dilleri -->
+                    <div class="skill-group-card">
+                        <div class="skill-icon-header">
+                            <div class="skill-badge-icon icon-code">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <div>
+                                <h3 class="skill-group-title">Programlama Dilleri</h3>
+                                <p class="skill-group-sub">Temel yazılım geliştirme</p>
+                            </div>
+                        </div>
+                        <ul class="skill-items">
+                            <li>
+                                <div class="skill-info">
+                                    <span class="skill-name">C++</span>
+                                    <span class="skill-level">İleri / Gömülü</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span class="skill-name">C# (.NET)</span>
+                                    <span class="skill-level">Yetkin / Unity & Desktop</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span class="skill-name">Dart</span>
+                                    <span class="skill-level">Yetkin / Flutter</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-level">Orta Seviye</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="card-links">
-                        <a href="https://play.google.com/store/apps/details?id=com.artulatif.casuskim"
-                            target="_blank">Oyun
-                            Linki</a>
+
+                    <!-- Yetenek Grubu 2: Mobil & Oyun -->
+                    <div class="skill-group-card">
+                        <div class="skill-icon-header">
+                            <div class="skill-badge-icon icon-game">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <div>
+                                <h3 class="skill-group-title">Mobil & Oyun Geliştirme</h3>
+                                <p class="skill-group-sub">Kullanıcı deneyimi & oyun motorları</p>
+                            </div>
+                        </div>
+                        <ul class="skill-items">
+                            <li>
+                                <div class="skill-info">
+                                    <span class="skill-name">Flutter & Dart</span>
+                                    <span class="skill-level">Mobil Uygulama Mimarisi</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span class="skill-name">Unity Engine</span>
+                                    <span class="skill-level">2D/3D Oyun Mekanikleri</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span class="skill-name">Google Play Console</span>
+                                    <span class="skill-level">Yayınlama & Sürüm Yönetimi</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span class="skill-name">Windows Forms</span>
+                                    <span class="skill-level">Masaüstü Arayüz</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Yetenek Grubu 3: Gömülü Sistemler & IoT -->
+                    <div class="skill-group-card">
+                        <div class="skill-icon-header">
+                            <div class="skill-badge-icon icon-iot">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div>
+                                <h3 class="skill-group-title">Gömülü Sistemler & Donanım</h3>
+                                <p class="skill-group-sub">Mikrokontrolcüler & sensörler</p>
+                            </div>
+                        </div>
+                        <ul class="skill-items">
+                            <li>
+                                <div class="skill-info">
+                                    <span class="skill-name">ESP32 & Arduino</span>
+                                    <span class="skill-level">Mikrokontrolcü Mimarisi</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span class="skill-name">Sensör & Servo Entegrasyonu</span>
+                                    <span class="skill-level">Aktüatör & PWM Kontrolü</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span class="skill-name">Kinematik Hesaplamalar</span>
+                                    <span class="skill-level">Robotik Kol Hareket Modelleri</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span class="skill-name">Devre Tasarımı & Lehimleme</span>
+                                    <span class="skill-level">Prototipleme</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Yetenek Grubu 4: Tasarım & Araçlar -->
+                    <div class="skill-group-card">
+                        <div class="skill-icon-header">
+                            <div class="skill-badge-icon icon-tools">
+                                <i class="fas fa-cubes"></i>
+                            </div>
+                            <div>
+                                <h3 class="skill-group-title">Tasarım & Geliştirme Araçları</h3>
+                                <p class="skill-group-sub">Modelleme & versiyonlama</p>
+                            </div>
+                        </div>
+                        <ul class="skill-items">
+                            <li>
+                                <div class="skill-info">
+                                    <span class="skill-name">Blender 3D</span>
+                                    <span class="skill-level">Modelleme & Render</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span class="skill-name">FDM 3D Baskı & Slicing</span>
+                                    <span class="skill-level">Cura / PrusaSlicer</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span class="skill-name">Git & GitHub</span>
+                                    <span class="skill-level">Versiyon Kontrol & İş Akışı</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info">
+                                    <span class="skill-name">VS Code & Visual Studio</span>
+                                    <span class="skill-level">Geliştirme Ortamları</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HAKKIMDA BÖLÜMÜ -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-card">
+                    <div class="about-grid">
+                        <div class="about-content">
+                            <span class="section-tag">Hakkımda</span>
+                            <h2 class="about-heading">Fikri Kodlayan, Kodu Donanıma Dönüştüren Bir Mühendislik Yaklaşımı</h2>
+                            <p class="about-text">
+                                Bilgisayar Mühendisliği son sınıf öğrencisiyim. Yazılım dünyasında sadece ekranda kalan
+                                kodlarla yetinmeyip, gerçek dünyada fiziksel etkileşime geçen robotik, IoT ve 3D tasarım
+                                projeleri üretmekten büyük heyecan duyuyorum.
+                            </p>
+                            <p class="about-text">
+                                Google Play'de 10.000'den fazla oyuncuya ulaşan mobil oyunumdan, 6 eksenli ESP32 tabanlı
+                                robotik kol projeme kadar her çalışmamda temiz kod, modüler mimari ve kullanıcı odaklı tasarım
+                                ilkelerini benimsiyorum.
+                            </p>
+
+                            <div class="about-highlights">
+                                <div class="highlight-item">
+                                    <div class="highlight-icon"><i class="fas fa-graduation-cap"></i></div>
+                                    <div>
+                                        <div class="highlight-title">Bilgisayar Mühendisliği Lisansı</div>
+                                        <div class="highlight-desc">Son Sınıf · Beklenen Mezuniyet: 2026</div>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <div class="highlight-icon"><i class="fas fa-rocket"></i></div>
+                                    <div>
+                                        <div class="highlight-title">Hızlı Öğrenme & Problem Çözme</div>
+                                        <div class="highlight-desc">Yazılımdan donanıma uçtan uca sistem geliştirme</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- İşe Alım Kriterleri Kutusu -->
+                        <div class="recruiter-box">
+                            <h3 class="recruiter-title">
+                                <i class="fas fa-clipboard-check"></i>
+                                İşe Alım Kriterleri Özeti
+                            </h3>
+                            <ul class="recruiter-checklist">
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Google Play üzerinde <strong>canlıda doğrulanmış</strong> ürün tecrübesi</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>C++, C# ve Dart dillerinde <strong>güçlü nesne yönelimli temeller</strong></span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>ESP32 & Arduino ile <strong>gömülü sistem prototipleme</strong></span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Blender & 3D baskı ile <strong>hızlı donanım kabuğu tasarımı</strong></span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Global Game Jam gibi maratonlarda <strong>çevik ekip çalışması</strong></span>
+                                </li>
+                            </ul>
+                            <div class="recruiter-cta">
+                                <a href="mailto:mesutalperenkir52@gmail.com" class="btn-primary full-width">
+                                    <i class="fas fa-envelope"></i> Mülakat / Görüşme Başlat
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Robot Kol -->
-            <div class="project-card proje">
-                <div class="card-image-slider">
-                    <img src="img/robokol_full0.webp" alt="Görsel 1">
-                    <img src="img/robokol_base1.webp" alt="Görsel 2">
-                    <img src="img/robokol_mid0.webp" alt="Görsel 3">
-                    <img src="img/robokol_base0.webp" alt="Görsel 4">
-                </div>
-                <div class="card-content">
-                    <h3>Robotik Kol</h3>
-                    <p>ESP32 ve servo motorlar kullanarak geliştirilen robotik kol projesi.</p>
-                    <div class="tags">
-                        <span class="tag">C++</span>
-                        <span class="tag">ESP32</span>
-                        <span class="tag">Gömülü Sistemler</span>
-                        <span class="tag">Elektronik</span>
-                        <span class="tag">Kinematik Hesaplamalar</span>
-                        <span class="tag">3D Tasarım ve Baskı</span>
+        <!-- İLETİŞİM BÖLÜMÜ -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <span class="section-tag">İletişim</span>
+                        <h2 class="contact-title">Birlikte Harika Projeler Geliştirelim</h2>
+                        <p class="contact-subtitle">
+                            İş teklifleri, staj fırsatları, proje işbirlikleri veya sadece tanışmak için bana istediğiniz zaman ulaşabilirsiniz.
+                        </p>
                     </div>
-                    <div class="card-links">
-                        <!--  -->
+
+                    <div class="contact-channels">
+                        <!-- E-posta Kutusu -->
+                        <div class="channel-card">
+                            <div class="channel-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="channel-info">
+                                <div class="channel-label">E-Posta Adresi</div>
+                                <div class="channel-value" id="emailText">mesutalperenkir52@gmail.com</div>
+                            </div>
+                            <div class="channel-buttons">
+                                <a href="mailto:mesutalperenkir52@gmail.com" class="btn-secondary btn-sm">
+                                    <i class="fas fa-paper-plane"></i> Gönder
+                                </a>
+                                <button class="btn-ghost btn-sm" id="copyEmailBtn" title="E-postayı Kopyala">
+                                    <i class="fas fa-copy"></i> Kopyala
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- LinkedIn Kutusu -->
+                        <div class="channel-card">
+                            <div class="channel-icon icon-linkedin"><i class="fab fa-linkedin-in"></i></div>
+                            <div class="channel-info">
+                                <div class="channel-label">LinkedIn Profili</div>
+                                <div class="channel-value">linkedin.com/in/mesut-alperen-kir-01920a2a7</div>
+                            </div>
+                            <div class="channel-buttons">
+                                <a href="https://www.linkedin.com/in/mesut-alperen-kir-01920a2a7/" target="_blank"
+                                    rel="noopener" class="btn-secondary btn-sm">
+                                    <i class="fas fa-external-link-alt"></i> Profili İncele
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- GitHub Kutusu -->
+                        <div class="channel-card">
+                            <div class="channel-icon icon-github"><i class="fab fa-github"></i></div>
+                            <div class="channel-info">
+                                <div class="channel-label">GitHub Kod Deposu</div>
+                                <div class="channel-value">github.com/alperenoit</div>
+                            </div>
+                            <div class="channel-buttons">
+                                <a href="https://github.com/alperenoit" target="_blank" rel="noopener"
+                                    class="btn-secondary btn-sm">
+                                    <i class="fas fa-code-branch"></i> Depoları Gör
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kopyalandı Bildirimi (Toast) -->
+                    <div id="toastNotification" class="toast-notification">
+                        <i class="fas fa-check-circle"></i> E-posta adresi panoya kopyalandı!
                     </div>
                 </div>
             </div>
-
-            <!-- Fun The Mental -->
-            <div class="project-card oyun">
-                <div class="card-image-slider">
-                    <img src="img/ftm1.webp" alt="Görsel 1">
-                    <img src="img/ftm0.webp" alt="Görsel 2">
-                    <img src="img/ftm2.webp" alt="Görsel 3">
-                </div>
-                <div class="card-content">
-                    <h3>Fun The Mental</h3>
-                    <p>2024 Global Game Jam'de arkadaşlarımla geliştirdiğimiz bu oyunda; o senenin "Make Me Laugh"
-                        temasına
-                        uygun olacak şekilde bir oyun yaptık.
-                        Bir stand-up sanatçısı sahnede Quick Time Event mekaniği ile doğru espirileri zamanında yaparak
-                        seyirciyi güldürmeye çalışır.
-                        Ara bölümlerde ise insan zihninin içinde bu espirileri tamamladığını düşündüren (aynı zamanda
-                        yetiştiremediğimiz) bir kesit bulunur.
-                        Bu kesitler ile de stand-up için gittiği şehirleri sırayla tamamlar.</p>
-                    <div class="tags">
-                        <span class="tag">Unity</span>
-                        <span class="tag">C#</span>
-                        <span class="tag">Oyun Geliştirme</span>
-                        <span class="tag">GameJam</span>
-                        <span class="tag">Ekip Çalışması</span>
-                    </div>
-                    <div class="card-links">
-                        <a href="https://globalgamejam.org/games/2024/fun-mental-7" target="_blank">Oyun Linki</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Havuç -->
-            <div class="project-card proje">
-                <div class="card-image-slider">
-                    <img src="img/havuc1.webp" alt="Zootopia Havuç">
-                    <img src="img/havuc0.webp" alt="Zootopia Havuç 2">
-                </div>
-                <div class="card-content">
-                    <h3>Zootopia Havuç</h3>
-                    <p>Arduino sistemleri kullanarak geliştirdiğim, ses kaydedici ve MP3 çalar özellikli 3D baskı havuç
-                        kalem projesi.</p>
-                    <div class="tags">
-                        <span class="tag">Arduino</span>
-                        <span class="tag">Elektronik</span>
-                        <span class="tag">3D Tasarım ve Baskı</span>
-                        <span class="tag">MP3 Çalar</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Görsel Eşleştirme -->
-            <div class="project-card program">
-                <div class="card-image-slider">
-                    <img src="img/imageGuess0.webp" alt="Görsel 1">
-                    <img src="img/imageGuess1.webp" alt="Görsel 2">
-                </div>
-                <div class="card-content">
-                    <h3>Görsel Eşleştirme</h3>
-                    <p>Oyuncuların kısa süreliğine gösterilen görsellerin yerini hafızada tutup eşleştirmeye çalıştığı
-                        form uygulaması.</p>
-                    <div class="tags">
-                        <span class="tag">C#</span>
-                        <span class="tag">Windows Forms</span>
-                    </div>
-                    <div class="card-links">
-                        <a href="https://github.com/alperenoit/imageGuesser" target="_blank"><i
-                                class="fab fa-github"></i> İncele</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Masa Lambası -->
-            <div class="project-card proje">
-                <div class="card-image-slider">
-                    <img src="img/masaLamba2.webp" alt="Masa Lambası">
-                    <img src="img/masaLamba1.webp" alt="Masa Lambası 2">
-                    <img src="img/masaLamba0.webp" alt="Masa Lambası 3">
-                </div>
-                <div class="card-content">
-                    <h3>Masa Lambası</h3>
-                    <p>3D baskı teknolojisi kullanarak geliştirdiğim, LED ışıklandırma sistemiyle donatılmış masa
-                        lambası projesi.</p>
-                    <div class="tags">
-                        <span class="tag">3D Tasarım ve Baskı</span>
-                        <span class="tag">Elektronik</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3D Kalemlik -->
-            <div class="project-card proje">
-                <div class="card-image-slider">
-                    <img src="img/kalemlik0.webp" alt="3D Kalemlik">
-                    <img src="img/kalemlik1.webp" alt="3D Kalemlik 2">
-                </div>
-                <div class="card-content">
-                    <h3>3D Kalemlik</h3>
-                    <p>3D baskı teknolojisi kullanarak geliştirdiğim, modern ve pratik bir kalemlik projesi.</p>
-                    <div class="tags">
-                        <span class="tag">3D Tasarım ve Baskı</span>
-                        <span class="tag">Elektronik</span>
-                    </div>
-                    <div class="card-links">
-                        <a href="https://www.printables.com/model/1759385-pen-holder-desk-organizer"
-                            target="_blank">Dosya
-                            Linki</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- İLETİŞİM BÖLÜMÜ -->
-    <section id="contact" class="contact-section">
-        <div class="contact-content">
-            <h2>Benimle İletişime Geçin</h2>
-            <p>Projelerim hakkında detaylı bilgi almak, işbirlikleri yapmak veya sadece merhaba demek için bana
-                ulaşabilirsiniz.</p>
-            <a href="mailto:mesutalperenkir52@gmail.com" class="btn-primary">E-posta Gönder</a>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- ALT BİLGİ (FOOTER) -->
-    <footer class="footer">
-        <div class="footer-social">
-            <a href="https://github.com/alperenoit" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/artulatif/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/mesut-alperen-kir-01920a2a7/" target="_blank"><i
-                    class="fab fa-linkedin"></i></a>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">Mesut Alperen Kır</div>
+                <p class="footer-desc">Bilgisayar Mühendisliği · Yazılım, Oyun & Gömülü Sistemler</p>
+            </div>
+
+            <div class="footer-socials">
+                <a href="https://github.com/alperenoit" target="_blank" rel="noopener" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mesut-alperen-kir-01920a2a7/" target="_blank" rel="noopener"
+                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/artulatif/" target="_blank" rel="noopener" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="mailto:mesutalperenkir52@gmail.com" aria-label="E-posta"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <div class="footer-right">
+                <button id="backToTopBtn" class="back-to-top" title="Sayfa Başına Dön">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+            </div>
         </div>
-        <p>&copy; 2026 Mesut Alperen KIR. Tüm hakları saklıdır.</p>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Mesut Alperen Kır. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Ana JavaScript Dosyası -->
     <script src="script.js"></script>
 </body>
 

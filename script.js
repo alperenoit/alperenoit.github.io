@@ -1,125 +1,214 @@
-// Sayfa yüklendiğinde otomatik olarak çalışacak sistem (DOM Manipülasyonu)
+/**
+ * MESUT ALPEREN KIR — PORTFOLYO
+ * Modern & İnteraktif JavaScript İşlevleri
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
-
-    // 1. Sayfadaki tüm görsel kaydırma alanlarını bul
-    const sliders = document.querySelectorAll('.card-image-slider');
-
-    // 2. Her bir alanı tek tek kontrol et
-    sliders.forEach(slider => {
-        const imageCount = slider.querySelectorAll('img').length;
-
-        // 3. Sadece 1'den fazla görsel varsa okları ve sistemi kur
-        if (imageCount > 1) {
-
-            // Sarıcı (wrapper) ana div oluştur
-            const wrapper = document.createElement('div');
-            wrapper.className = 'slider-wrapper';
-
-            // Sarıcıyı HTML'de slider'ın olduğu yere yerleştir ve slider'ı içine al
-            slider.parentNode.insertBefore(wrapper, slider);
-            wrapper.appendChild(slider);
-
-            // Sol ok butonunu oluştur
-            const leftBtn = document.createElement('button');
-            leftBtn.className = 'slide-btn left-btn';
-            leftBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
-            leftBtn.onclick = function () { slide(this, -1); };
-
-            // Sağ ok butonunu oluştur
-            const rightBtn = document.createElement('button');
-            rightBtn.className = 'slide-btn right-btn';
-            rightBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
-            rightBtn.onclick = function () { slide(this, 1); };
-
-            // Butonları sarıcının içine yerleştir
-            wrapper.insertBefore(leftBtn, slider);
-            wrapper.appendChild(rightBtn);
-        }
-    });
+    initCarousels();
+    initProjectFilters();
+    initMobileMenu();
+    initEmailCopy();
+    initBackToTop();
+    initScrollSpy();
 });
 
-// Görsel kaydırma ve döngü (loop) fonksiyonu
-function slide(button, direction) {
-    const wrapper = button.parentElement;
-    const slider = wrapper.querySelector('.card-image-slider');
+/* ---------------------------------------------------------
+   1. GÖRSEL CAROUSEL / SLIDER SİSTEMİ
+   --------------------------------------------------------- */
+function initCarousels() {
+    const carousels = document.querySelectorAll('[data-carousel]');
 
-    const scrollAmount = slider.clientWidth; // Tek bir görselin ekrandaki genişliği
-    const maxScrollLeft = slider.scrollWidth - slider.clientWidth; // Kaydırılabilecek maksimum alan
+    carousels.forEach(carousel => {
+        const track = carousel.querySelector('.carousel-track');
+        const images = track ? track.querySelectorAll('img') : [];
+        const total = images.length;
+        const counter = carousel.querySelector('.carousel-counter');
 
-    // Sola tıklanıyorsa VE kaydırma çubuğu en baştaysa
-    if (direction === -1 && slider.scrollLeft <= 5) {
-        // En sona zıpla
-        slider.scrollTo({
-            left: maxScrollLeft,
-            behavior: 'smooth'
-        });
-    }
-    // Sağa tıklanıyorsa VE kaydırma çubuğu en sondaysa
-    else if (direction === 1 && slider.scrollLeft >= maxScrollLeft - 5) {
-        // En başa zıpla
-        slider.scrollTo({
-            left: 0,
-            behavior: 'smooth'
-        });
-    }
-    // Ortadaki görsellerdeysek normal kaydırmaya devam et
-    else {
-        slider.scrollBy({
-            left: scrollAmount * direction,
-            behavior: 'smooth'
-        });
-    }
-}
-
-// Proje kategori filtreleme fonksiyonu
-function filterProjects(category) {
-    const cards = document.querySelectorAll('.project-card');
-    const buttons = document.querySelectorAll('.filter-btn');
-
-    // Tıklanan butonu aktif yap
-    buttons.forEach(btn => btn.classList.remove('active'));
-    const clickedBtn = window.event ? (window.event.currentTarget || window.event.target) : null;
-    if (clickedBtn && clickedBtn.classList) {
-        clickedBtn.classList.add('active');
-    }
-
-    // Kartları kontrol et ve filtrele
-    cards.forEach(card => {
-        if (category === 'all' || card.classList.contains(category)) {
-            card.classList.remove('hide');
-        } else {
-            card.classList.add('hide');
+        if (total <= 1) {
+            // Tek görsel varsa sayacı ve okları gizle
+            if (counter) counter.style.display = 'none';
+            return;
         }
+
+        // Sol Ok Butonu
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'carousel-btn carousel-prev';
+        prevBtn.setAttribute('aria-label', 'Önceki Görsel');
+        prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+
+        // Sağ Ok Butonu
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'carousel-btn carousel-next';
+        nextBtn.setAttribute('aria-label', 'Sonraki Görsel');
+        nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+
+        carousel.appendChild(prevBtn);
+        carousel.appendChild(nextBtn);
+
+        // Kaydırma Olayı
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            scrollCarousel(track, -1, total, counter);
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            scrollCarousel(track, 1, total, counter);
+        });
+
+        // Kullanıcı elle kaydırdığında sayacı güncelle
+        track.addEventListener('scroll', () => {
+            updateCounter(track, total, counter);
+        }, { passive: true });
     });
 }
 
-// Mobil menü açma/kapatma
-function toggleMenu() {
-    const menu = document.getElementById('mobileLinks');
-    const overlay = document.getElementById('menuOverlay');
-    const hamburger = document.querySelector('.hamburger');
-    if (menu) menu.classList.toggle('open');
-    if (overlay) overlay.classList.toggle('show');
-    if (hamburger) hamburger.classList.toggle('active');
+function scrollCarousel(track, direction, total, counter) {
+    const slideWidth = track.clientWidth;
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    const currentScroll = track.scrollLeft;
+
+    // En başa veya en sona sarma (loop)
+    if (direction === -1 && currentScroll <= 5) {
+        track.scrollTo({ left: maxScroll, behavior: 'smooth' });
+    } else if (direction === 1 && currentScroll >= maxScroll - 5) {
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+        track.scrollBy({ left: slideWidth * direction, behavior: 'smooth' });
+    }
 }
 
-// Alt sayfalardaki (projelerim, oyunlarım, programlarım) sekme değiştirme fonksiyonu
-function acProje(projeId) {
-    const icerikler = document.querySelectorAll('.proje-icerik');
-    if (icerikler.length > 0) {
-        icerikler.forEach(ic => ic.classList.remove('aktif'));
+function updateCounter(track, total, counter) {
+    if (!counter) return;
+    const slideWidth = track.clientWidth || 1;
+    const currentIndex = Math.round(track.scrollLeft / slideWidth) + 1;
+    const safeIndex = Math.min(Math.max(currentIndex, 1), total);
+    counter.textContent = `${safeIndex} / ${total}`;
+}
 
-        const secilenProje = document.getElementById(projeId);
-        if (secilenProje) {
-            secilenProje.classList.add('aktif');
+/* ---------------------------------------------------------
+   2. PROJE KATEGORİ FİLTRELEME
+   --------------------------------------------------------- */
+function initProjectFilters() {
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            filterTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const category = tab.getAttribute('data-category');
+
+            projectCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    card.classList.remove('hide');
+                } else {
+                    card.classList.add('hide');
+                }
+            });
+        });
+    });
+}
+
+/* ---------------------------------------------------------
+   3. MOBİL MENÜ (HAMBURGER)
+   --------------------------------------------------------- */
+function initMobileMenu() {
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (!hamburgerBtn || !mobileMenu) return;
+
+    hamburgerBtn.addEventListener('click', () => {
+        hamburgerBtn.classList.toggle('open');
+        mobileMenu.classList.toggle('active');
+    });
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburgerBtn.classList.remove('open');
+            mobileMenu.classList.remove('active');
+        });
+    });
+}
+
+/* ---------------------------------------------------------
+   4. E-POSTA KOPYALAMA & TOAST BİLDİRİMİ
+   --------------------------------------------------------- */
+function initEmailCopy() {
+    const copyBtn = document.getElementById('copyEmailBtn');
+    const toast = document.getElementById('toastNotification');
+    const email = 'mesutalperenkir52@gmail.com';
+
+    if (!copyBtn) return;
+
+    copyBtn.addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText(email);
+            showToast();
+        } catch (err) {
+            // Geriye dönük uyumluluk
+            const tempInput = document.createElement('input');
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast();
         }
+    });
 
-        const butonlar = document.querySelectorAll('.filter-button');
-        butonlar.forEach(btn => btn.classList.remove('act'));
-
-        const currentBtn = window.event ? (window.event.currentTarget || window.event.target) : null;
-        if (currentBtn && currentBtn.classList) {
-            currentBtn.classList.add('act');
-        }
+    function showToast() {
+        if (!toast) return;
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2800);
     }
-}
+}
+
+/* ---------------------------------------------------------
+   5. SAYFA BAŞINA DÖN (BACK TO TOP)
+   --------------------------------------------------------- */
+function initBackToTop() {
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    if (!backToTopBtn) return;
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+/* ---------------------------------------------------------
+   6. SCROLLSPY (AKTİF MENÜ TAKİBİ)
+   --------------------------------------------------------- */
+function initScrollSpy() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links .nav-link');
+
+    window.addEventListener('scroll', () => {
+        let currentSectionId = '';
+        const scrollPosition = window.pageYOffset + 140;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSectionId}`) {
+                link.classList.add('active');
+            }
+        });
+    }, { passive: true });
+}
