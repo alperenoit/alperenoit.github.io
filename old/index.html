@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesut Alperen KIR | Portfolyo</title>
+    <meta name="description"
+        content="Mesut Alperen KIR'ın portfolyosu. Yazılım projeleri, 3D tasarımlar ve geliştirdiğim oyunlar hakkında bilgiler.">
+    <!-- CSS ve İkon Kütüphaneleri -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- AÇILIŞ EKRANI (HERO) -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>Merhaba,<br>ben <span>Mesut Alperen KIR</span></h1>
+            <p>Yazılım geliştirme, 3D tasarım ve donanım projeleriyle ilgileniyorum. Hayata geçirdiğim tüm çalışmaları
+                aşağıdan inceleyebilirsiniz.</p>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn-primary">Projelerimi Gör</a>
+                <a href="#contact" class="btn-secondary">Bana Ulaşın</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="square-card">
+                <img src="img/mesutalperen.webp" alt="Mesut Alperen KIR">
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLYO BÖLÜMÜ -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="section-title">
+            <h2>Çalışmalarım</h2>
+            <p>Geliştirdiğim projeler, oyunlar ve programlar</p>
+        </div>
+
+        <!-- Filtreleme Butonları -->
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterProjects('all')">Tümü</button>
+            <button class="filter-btn" onclick="filterProjects('proje')">Projelerim</button>
+            <button class="filter-btn" onclick="filterProjects('oyun')">Oyunlarım</button>
+            <button class="filter-btn" onclick="filterProjects('program')">Programlarım</button>
+        </div>
+
+        <!-- Kart Izgarası -->
+        <div class="projects-grid">
+
+            <!-- Casus Kim -->
+            <div class="project-card oyun">
+                <div class="card-image-slider">
+                    <img src="img/casus0.webp" alt="Görsel 1">
+                    <img src="img/casus1.webp" alt="Görsel 2">
+                    <img src="img/casus2.webp" alt="Görsel 3">
+                </div>
+                <div class="card-content">
+                    <h3>Casus Kim (10.000 İndirme)</h3>
+                    <p>Google Play'de Haziran 2026 itibariyle 10.000 indirmeye ulaşan, Flutter ile geliştirdiğim bir
+                        Casus
+                        Bulma oyunu. Bu oyunda öncelikle oyuncular kaç kişi
+                        oynayacaklarını ve
+                        kaç casus olacağını seçerler. Sonrasında sırayla herkese telefon elden ele dolaşır. Casus hariç
+                        herkese
+                        aynı kelime, casusa da benzer bir kelime gösterilir ve oyuncular casusu bulmaya çalışırken casus
+                        da
+                        sanki onlardanmış gibi konuşmaya çalışır.</p>
+                    <div class="tags">
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Mobil Uygulama</span>
+                        <span class="tag">Oyun Geliştirme</span>
+                        <span class="tag">Google Play</span>
+                        <span class="tag">Parti Oyunu</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.artulatif.casuskim"
+                            target="_blank">Oyun
+                            Linki</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Robot Kol -->
+            <div class="project-card proje">
+                <div class="card-image-slider">
+                    <img src="img/robokol_full0.webp" alt="Görsel 1">
+                    <img src="img/robokol_base1.webp" alt="Görsel 2">
+                    <img src="img/robokol_mid0.webp" alt="Görsel 3">
+                    <img src="img/robokol_base0.webp" alt="Görsel 4">
+                </div>
+                <div class="card-content">
+                    <h3>Robotik Kol</h3>
+                    <p>ESP32 ve servo motorlar kullanarak geliştirilen robotik kol projesi.</p>
+                    <div class="tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">ESP32</span>
+                        <span class="tag">Gömülü Sistemler</span>
+                        <span class="tag">Elektronik</span>
+                        <span class="tag">Kinematik Hesaplamalar</span>
+                        <span class="tag">3D Tasarım ve Baskı</span>
+                    </div>
+                    <div class="card-links">
+                        <!--  -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fun The Mental -->
+            <div class="project-card oyun">
+                <div class="card-image-slider">
+                    <img src="img/ftm1.webp" alt="Görsel 1">
+                    <img src="img/ftm0.webp" alt="Görsel 2">
+                    <img src="img/ftm2.webp" alt="Görsel 3">
+                </div>
+                <div class="card-content">
+                    <h3>Fun The Mental</h3>
+                    <p>2024 Global Game Jam'de arkadaşlarımla geliştirdiğimiz bu oyunda; o senenin "Make Me Laugh"
+                        temasına
+                        uygun olacak şekilde bir oyun yaptık.
+                        Bir stand-up sanatçısı sahnede Quick Time Event mekaniği ile doğru espirileri zamanında yaparak
+                        seyirciyi güldürmeye çalışır.
+                        Ara bölümlerde ise insan zihninin içinde bu espirileri tamamladığını düşündüren (aynı zamanda
+                        yetiştiremediğimiz) bir kesit bulunur.
+                        Bu kesitler ile de stand-up için gittiği şehirleri sırayla tamamlar.</p>
+                    <div class="tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">Oyun Geliştirme</span>
+                        <span class="tag">GameJam</span>
+                        <span class="tag">Ekip Çalışması</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://globalgamejam.org/games/2024/fun-mental-7" target="_blank">Oyun Linki</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Havuç -->
+            <div class="project-card proje">
+                <div class="card-image-slider">
+                    <img src="img/havuc1.webp" alt="Zootopia Havuç">
+                    <img src="img/havuc0.webp" alt="Zootopia Havuç 2">
+                </div>
+                <div class="card-content">
+                    <h3>Zootopia Havuç</h3>
+                    <p>Arduino sistemleri kullanarak geliştirdiğim, ses kaydedici ve MP3 çalar özellikli 3D baskı havuç
+                        kalem projesi.</p>
+                    <div class="tags">
+                        <span class="tag">Arduino</span>
+                        <span class="tag">Elektronik</span>
+                        <span class="tag">3D Tasarım ve Baskı</span>
+                        <span class="tag">MP3 Çalar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Görsel Eşleştirme -->
+            <div class="project-card program">
+                <div class="card-image-slider">
+                    <img src="img/imageGuess0.webp" alt="Görsel 1">
+                    <img src="img/imageGuess1.webp" alt="Görsel 2">
+                </div>
+                <div class="card-content">
+                    <h3>Görsel Eşleştirme</h3>
+                    <p>Oyuncuların kısa süreliğine gösterilen görsellerin yerini hafızada tutup eşleştirmeye çalıştığı
+                        form uygulaması.</p>
+                    <div class="tags">
+                        <span class="tag">C#</span>
+                        <span class="tag">Windows Forms</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/alperenoit/imageGuesser" target="_blank"><i
+                                class="fab fa-github"></i> İncele</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Masa Lambası -->
+            <div class="project-card proje">
+                <div class="card-image-slider">
+                    <img src="img/masaLamba2.webp" alt="Masa Lambası">
+                    <img src="img/masaLamba1.webp" alt="Masa Lambası 2">
+                    <img src="img/masaLamba0.webp" alt="Masa Lambası 3">
+                </div>
+                <div class="card-content">
+                    <h3>Masa Lambası</h3>
+                    <p>3D baskı teknolojisi kullanarak geliştirdiğim, LED ışıklandırma sistemiyle donatılmış masa
+                        lambası projesi.</p>
+                    <div class="tags">
+                        <span class="tag">3D Tasarım ve Baskı</span>
+                        <span class="tag">Elektronik</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3D Kalemlik -->
+            <div class="project-card proje">
+                <div class="card-image-slider">
+                    <img src="img/kalemlik0.webp" alt="3D Kalemlik">
+                    <img src="img/kalemlik1.webp" alt="3D Kalemlik 2">
+                </div>
+                <div class="card-content">
+                    <h3>3D Kalemlik</h3>
+                    <p>3D baskı teknolojisi kullanarak geliştirdiğim, modern ve pratik bir kalemlik projesi.</p>
+                    <div class="tags">
+                        <span class="tag">3D Tasarım ve Baskı</span>
+                        <span class="tag">Elektronik</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://www.printables.com/model/1759385-pen-holder-desk-organizer"
+                            target="_blank">Dosya
+                            Linki</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İLETİŞİM BÖLÜMÜ -->
+    <section id="contact" class="contact-section">
+        <div class="contact-content">
+            <h2>Benimle İletişime Geçin</h2>
+            <p>Projelerim hakkında detaylı bilgi almak, işbirlikleri yapmak veya sadece merhaba demek için bana
+                ulaşabilirsiniz.</p>
+            <a href="mailto:mesutalperenkir52@gmail.com" class="btn-primary">E-posta Gönder</a>
+        </div>
+    </section>
+
+    <!-- ALT BİLGİ (FOOTER) -->
+    <footer class="footer">
+        <div class="footer-social">
+            <a href="https://github.com/alperenoit" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/artulatif/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/mesut-alperen-kir-01920a2a7/" target="_blank"><i
+                    class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2026 Mesut Alperen KIR. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
