@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initEmailCopy();
     initBackToTop();
     initScrollSpy();
+    initAccessibilityWidget();
 });
 
 /* ---------------------------------------------------------
@@ -190,7 +191,7 @@ function initBackToTop() {
    --------------------------------------------------------- */
 function initScrollSpy() {
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links .nav-link');
+    const navLinks = document.querySelectorAll('.nav-list .nav-link');
 
     window.addEventListener('scroll', () => {
         let currentSectionId = '';
@@ -211,4 +212,147 @@ function initScrollSpy() {
             }
         });
     }, { passive: true });
+}
+
+/* ---------------------------------------------------------
+   7. ERİŞİLEBİLİRLİK VE GÖRÜNÜM ARACI (TEMA & ÖLÇEKLENDİRME)
+   --------------------------------------------------------- */
+function initAccessibilityWidget() {
+    const widget = document.getElementById('a11yWidget');
+    const toggleBtn = document.getElementById('a11yToggleBtn');
+    const panel = document.getElementById('a11yPanel');
+    const resetBtn = document.getElementById('a11yResetBtn');
+    const themeBtns = document.querySelectorAll('[data-theme-choice]');
+    const scaleDownBtn = document.getElementById('scaleDownBtn');
+    const scaleResetBtn = document.getElementById('scaleResetBtn');
+    const scaleUpBtn = document.getElementById('scaleUpBtn');
+    const scaleValueDisplay = document.getElementById('a11yScaleValue');
+
+    if (!widget || !toggleBtn || !panel) return;
+
+    const scaleSteps = [90, 100, 110, 120, 130];
+    let currentTheme = localStorage.getItem('mak_theme') || 'light';
+    let currentScale = parseInt(localStorage.getItem('mak_scale') || '100', 10);
+
+    if (!scaleSteps.includes(currentScale)) {
+        currentScale = 100;
+    }
+
+    // Başlangıç ayarlarını uygula
+    applyTheme(currentTheme);
+    applyScale(currentScale);
+
+    // Paneli aç / kapat
+    toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = panel.classList.toggle('open');
+        toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    });
+
+    // Dışarı tıklandığında paneli kapat
+    document.addEventListener('click', (e) => {
+        if (!widget.contains(e.target) && panel.classList.contains('open')) {
+            panel.classList.remove('open');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            panel.setAttribute('aria-hidden', 'true');
+        }
+    });
+
+    // ESC tuşuna basıldığında kapat
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && panel.classList.contains('open')) {
+            panel.classList.remove('open');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            panel.setAttribute('aria-hidden', 'true');
+            toggleBtn.focus();
+        }
+    });
+
+    // Tema butonları
+    themeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const chosenTheme = btn.getAttribute('data-theme-choice');
+            currentTheme = chosenTheme;
+            applyTheme(currentTheme);
+            localStorage.setItem('mak_theme', currentTheme);
+        });
+    });
+
+    // Ölçeklendirme butonları
+    if (scaleDownBtn) {
+        scaleDownBtn.addEventListener('click', () => {
+            const idx = scaleSteps.indexOf(currentScale);
+            if (idx > 0) {
+                currentScale = scaleSteps[idx - 1];
+                applyScale(currentScale);
+                localStorage.setItem('mak_scale', String(currentScale));
+            }
+        });
+    }
+
+    if (scaleResetBtn) {
+        scaleResetBtn.addEventListener('click', () => {
+            currentScale = 100;
+            applyScale(currentScale);
+            localStorage.setItem('mak_scale', '100');
+        });
+    }
+
+    if (scaleUpBtn) {
+        scaleUpBtn.addEventListener('click', () => {
+            const idx = scaleSteps.indexOf(currentScale);
+            if (idx < scaleSteps.length - 1) {
+                currentScale = scaleSteps[idx + 1];
+                applyScale(currentScale);
+                localStorage.setItem('mak_scale', String(currentScale));
+            }
+        });
+    }
+
+    // Tüm ayarları sıfırla
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            currentTheme = 'light';
+            currentScale = 100;
+            applyTheme(currentTheme);
+            applyScale(currentScale);
+            localStorage.removeItem('mak_theme');
+            localStorage.removeItem('mak_scale');
+        });
+    }
+
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+
+        themeBtns.forEach(btn => {
+            if (btn.getAttribute('data-theme-choice') === theme) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
+
+    function applyScale(scalePercent) {
+        // Kök font boyutunu (16px baz alınarak) güncelle
+        const basePx = (16 * scalePercent) / 100;
+        document.documentElement.style.fontSize = `${basePx}px`;
+
+        if (scaleValueDisplay) {
+            scaleValueDisplay.textContent = `%${scalePercent}`;
+        }
+
+        if (scaleResetBtn) {
+            if (scalePercent === 100) {
+                scaleResetBtn.classList.add('active');
+            } else {
+                scaleResetBtn.classList.remove('active');
+            }
+        }
+    }
 }
