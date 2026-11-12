@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initBackToTop();
     initScrollSpy();
     initAccessibilityWidget();
+    initPreventSelectionAndCopy();
 });
 
 /* ---------------------------------------------------------
@@ -139,6 +140,8 @@ function initMobileMenu() {
 /* ---------------------------------------------------------
    4. E-POSTA KOPYALAMA & TOAST BİLDİRİMİ
    --------------------------------------------------------- */
+let isProgrammaticCopy = false;
+
 function initEmailCopy() {
     const copyBtn = document.getElementById('copyEmailBtn');
     const toast = document.getElementById('toastNotification');
@@ -147,6 +150,7 @@ function initEmailCopy() {
     if (!copyBtn) return;
 
     copyBtn.addEventListener('click', async () => {
+        isProgrammaticCopy = true;
         try {
             await navigator.clipboard.writeText(email);
             showToast();
@@ -159,6 +163,10 @@ function initEmailCopy() {
             document.execCommand('copy');
             document.body.removeChild(tempInput);
             showToast();
+        } finally {
+            setTimeout(() => {
+                isProgrammaticCopy = false;
+            }, 100);
         }
     });
 
@@ -355,4 +363,43 @@ function initAccessibilityWidget() {
             }
         }
     }
+}
+
+/* ---------------------------------------------------------
+   8. SEÇİM VE KOPYALAMAYI ENGELLEME (ANTI-SELECTION & COPY)
+   --------------------------------------------------------- */
+function initPreventSelectionAndCopy() {
+    // 1. Mouse ile metin veya öğe seçimini engelle
+    document.addEventListener('selectstart', (e) => {
+        e.preventDefault();
+        return false;
+    });
+
+    // 2. Sayfa içeriğinin kopyalanmasını engelle (Adresi Kopyala butonu istisnası ile)
+    document.addEventListener('copy', (e) => {
+        if (!isProgrammaticCopy) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // 3. Görsellerin veya metin bloklarının sürüklenmesini engelle
+    document.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+        return false;
+    });
+
+    // 4. Sağ tık bağlam menüsü üzerinden kopyalamayı engelle
+    document.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        return false;
+    });
+
+    // 5. Ctrl+C / Ctrl+A / Ctrl+U gibi kısayolları engelle
+    document.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'C' || e.key === 'a' || e.key === 'A' || e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
+            e.preventDefault();
+            return false;
+        }
+    });
 }
