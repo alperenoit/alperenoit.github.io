@@ -231,7 +231,7 @@ function initAccessibilityWidget() {
     if (!widget || !toggleBtn || !panel) return;
 
     const scaleSteps = [90, 100, 110, 120, 130];
-    let currentTheme = localStorage.getItem('mak_theme') || 'light';
+    let currentTheme = localStorage.getItem('mak_theme') || 'dark';
     let currentScale = parseInt(localStorage.getItem('mak_scale') || '100', 10);
 
     if (!scaleSteps.includes(currentScale)) {
@@ -313,7 +313,7 @@ function initAccessibilityWidget() {
     // Tüm ayarları sıfırla
     if (resetBtn) {
         resetBtn.addEventListener('click', () => {
-            currentTheme = 'light';
+            currentTheme = 'dark';
             currentScale = 100;
             applyTheme(currentTheme);
             applyScale(currentScale);
@@ -323,8 +323,8 @@ function initAccessibilityWidget() {
     }
 
     function applyTheme(theme) {
-        if (theme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
+        if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
         } else {
             document.documentElement.removeAttribute('data-theme');
         }
